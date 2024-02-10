@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community menu</title>
+</head>
+<body>
+<h1>Community menu</h1>
+<br>
+<form th:action="@{/main/community/all}" method="get">
+    <input type="submit" value="Get all communities"/>
+</form>
+<br>
+<form th:action="@{/main/community/name}" method="get">
+    <input type="submit" value="Get community by name"/>
+</form>
+<br>
+<form th:action="@{/main/community/theme}" method="get">
+    <input type="submit" value="Get community by theme">
+</form>
+<div th:if="${userOwnComms.size() < 3}">
+    <br>
+    <form th:action="@{/main/community/create}" method="get">
+        <input type="submit" value="Create community">
+    </form>
+</div>
+<div th:if="${userOwnComms.size() > 0}">
+    <br>
+    <form th:action="@{/main/community/my/own}" method="get">
+        <input type="submit" value="My own communities">
+    </form>
+</div>
+<div th:if="${userComms.size() > 0}">
+    <br>
+    <form th:action="@{/main/community/my}" method="get">
+        <input type="submit" value="My communities">
+    </form>
+</div>
+<br>
+<form th:action="@{/main/profile}" method="get">
+    <input type="submit" value="Back to my profile">
+</form>
+</body>
+</html>

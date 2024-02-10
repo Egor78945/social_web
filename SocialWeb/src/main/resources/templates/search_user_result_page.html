@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+<h1>Result</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Friend Count</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>Profile</th>
+        <th>Report</th>
+        <div sec:authorize="hasAuthority('ADMIN_ROLE')">
+            <th>Ban</th>
+        </div>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="u : ${users}">
+        <td><span th:text="${u.getId()}">Id</span></td>
+        <td><span th:text="${u.getName()}">Name</span></td>
+        <td><span th:text="${u.getSurname()}">Surname</span></td>
+        <td><span th:text="${u.getFriends().size()}">Friend count</span></td>
+        <td><span th:text="${u.getCountry()}">Country</span></td>
+        <td><span th:text="${u.getCity()}">City</span></td>
+        <td>
+            <form th:action="@{/main/profile/{id}(id=${u.getId()})}" method="get">
+                <input type="submit" value="Profile">
+            </form>
+        </td>
+        <td>
+            <form th:action="@{/main/user/report/{id}(id=${u.getId()})}" method="get">
+                <input type="submit" value="Report">
+            </form>
+        </td>
+        <div sec:authorize="hasAuthority('ADMIN_ROLE')">
+            <td>
+                <div th:if="${u.getIsBan()}">
+                    <form th:action="@{/admin/user/unban/{id}(id=${u.getId()})}" method="post">
+                        <input type="submit" value="Unban">
+                    </form>
+                </div>
+                <div th:if="${!u.getIsBan()}">
+                    <form th:action="@{/admin/user/ban/{id}(id=${u.getId()})}" method="get">
+                        <input type="submit" value="Ban">
+                    </form>
+                </div>
+            </td>
+        </div>
+    </tr>
+    </tbody>
+</table>
+<br>
+<form th:action="@{/main/profile}" method="get">
+    <input type="submit" value="Back to my profile">
+</form>
+</body>
+</html>

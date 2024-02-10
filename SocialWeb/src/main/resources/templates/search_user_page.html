@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+<h1>User search</h1>
+<form th:action="@{/main/user/search}" method="post" th:object="${search}">
+    Name: <input type="text" th:field="*{name}"/><br>
+    Surname: <input type="text" th:field="*{surname}"/><br>
+    <input type="submit" value="Search">
+</form>
+<br>
+<form th:action="@{/main/profile}" method="get">
+    <input type="submit" value="Back to my profile">
+</form>
+</body>
+</html>

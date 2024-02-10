@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comments</title>
+</head>
+<body>
+<h1>News comments</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Comment</th>
+        <th>Profile</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${comments.isEmpty()}">
+        <td colspan="2">This news has not comments.</td>
+    </tr>
+    <tr th:each="c : ${comments}">
+        <td><span th:text="${c.getCommentator().getId()}">Id</span></td>
+        <td><span th:text="${c.getCommentator().getName()}">Name</span></td>
+        <td><span th:text="${c.getCommentator().getSurname()}">Surname</span></td>
+        <td><span th:text="${c.getComment()}">Comment</span></td>
+        <td>
+            <form th:action="@{/main/profile/{id}(id=${c.getCommentator().getId()})}" method="get">
+                <input type="submit" value="Profile">
+            </form>
+        </td>
+        <div th:if="${c.getCommentator().getId().equals(user.getId())}">
+            <td>
+                <form th:action="@{/main/news/comment/delete/{id}(id=${c.getId()})}" method="post">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </div>
+    </tr>
+    </tbody>
+</table>
+<br>
+<form th:action="@{/main/news}" method="get">
+    <input type="submit" value="Back to news menu">
+</form>
+<br>
+<form th:action="@{/main/profile}" method="get">
+    <input type="submit" value="Back to my profile">
+</form>
+</body>
+</html>

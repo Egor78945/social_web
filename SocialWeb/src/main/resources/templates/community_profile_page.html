@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Community</title>
+</head>
+<body>
+<h1 th:text="${community.getName()}"/>
+<h1 th:text="'Community theme: ' + ${community.getTheme().toString()}"/>
+<h1 th:text="'Subscribers: ' + ${community.getSubscribers().size()}"/>
+<h1 th:text="'Owner: ' + ${community.getOwner().getName() + ' ' + community.getOwner().getSurname()}"/>
+<br>
+<div th:if="${!community.getSubscribers().contains(user)}">
+    <form th:action="@{/main/community/subscribe/{id}(id=${community.getId()})}" method="post">
+        <input type="submit" value="Subscribe">
+    </form>
+    <br>
+</div>
+<div th:if="${community.getSubscribers().contains(user)}">
+    <form th:action="@{/main/community/unsubscribe/{id}(id=${community.getId()})}" method="post">
+        <input type="submit" value="Unsubscribe">
+    </form>
+    <br>
+</div>
+<br>
+<form th:action="@{/main/community/menu}" method="get">
+    <input type="submit" value="Back to community menu">
+</form>
+<br>
+<form th:action="@{/main/profile}" method="get">
+    <input type="submit" value="Back to my profile">
+</form>
+</body>
+</html>

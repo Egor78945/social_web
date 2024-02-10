@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banned users</title>
+</head>
+<body>
+<h1>Banned users</h1>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${banned.isEmpty()}">
+        <td colspan="2">No one user is banned.</td>
+    </tr>
+    <tr th:each="u : ${banned}">
+        <td><span th:text="${u.getId()}">Id</span></td>
+        <td><span th:text="${u.getName()}">Name</span></td>
+        <td><span th:text="${u.getSurname()}">Surname</span></td>
+        <td><form th:action="@{/admin/user/banned/{id}(id=${u.getId()})}" method="get">
+            <input type="submit" value="Details">
+        </form></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<form th:action="@{/admin/panel}" method="get">
+    <input type="submit" value="Back to admin panel">
+</form>
+<br>
+<form th:action="@{/main/profile}" method="get">
+    <input type="submit" value="Back to my profile">
+</form>
+</body>
+</html>

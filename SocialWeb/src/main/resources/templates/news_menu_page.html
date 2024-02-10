@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News menu</title>
+</head>
+<body>
+<h1>News menu</h1>
+<form th:action="@{/main/news/all}" method="get">
+    <input type="submit" value="All news">
+</form>
+<br>
+<form th:action="@{/main/news/post}" method="get">
+    <input type="submit" value="Post news">
+</form>
+<br>
+<form th:action="@{/main/profile}" method="get">
+    <input type="submit" value="Back to my profile">
+</form>
+</body>
+</html>

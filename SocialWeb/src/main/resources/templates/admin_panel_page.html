@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin panel</title>
+</head>
+<body>
+<h1>Admin panel</h1>
+<br>
+<div sec:authorize="hasAuthority('ADMIN_ROLE')">
+    <form th:action="@{/admin/user/banned}" method="get">
+        <input type="submit" value="Banned users">
+    </form>
+    <br>
+    <form th:action="@{/admin/user/reports}" method="get">
+        <input type="submit" value="Reported users">
+    </form>
+    <br>
+    <form th:action="@{/main/profile}" method="get">
+        <input type="submit" value="Back to my profile">
+    </form>
+    <br>
+</div>
+</body>
+</html>

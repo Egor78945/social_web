@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorization</title>
+</head>
+<body>
+<h1>Login</h1><br>
+<form th:action="@{/auth/login}" method="post">
+    Email: <input type="text" name="username" id="email" placeholder="Email"><br>
+    Password: <input type="text" name="password" id="password" placeholder="Password"><br>
+    <input type="submit" value="Login">
+</form>
+<br>
+<a href="/auth/register">Registration</a>
+</body>
+</html>
