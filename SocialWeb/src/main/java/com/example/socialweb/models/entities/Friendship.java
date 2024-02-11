@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "friendship")
 @EqualsAndHashCode
@@ -13,12 +15,14 @@ public class Friendship {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     private User sender;
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.EAGER)
     private User recipient;
     @Column(name = "status")
     private Boolean status;
+    @Column(name = "date")
+    private String date;
 
     public Friendship() {
 
@@ -28,5 +32,6 @@ public class Friendship {
         this.sender = sender;
         this.recipient = recipient;
         status = false;
+        date = new Date(System.currentTimeMillis()).toString();
     }
 }
