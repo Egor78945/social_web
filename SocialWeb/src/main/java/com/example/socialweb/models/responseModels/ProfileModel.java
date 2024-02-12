@@ -12,6 +12,7 @@ public class ProfileModel {
     private Integer friendsCount;
     private String sex;
     private String registerDate;
+    private String profileCloseType;
     public ProfileModel(User user){
         id = user.getId();
         name = user.getName();
@@ -19,5 +20,6 @@ public class ProfileModel {
         friendsCount = user.getFriendsCount();
         sex = UserConverter.convertSexToString(user.getSex());
         registerDate = user.getRegisterDate();
+        profileCloseType = UserConverter.convertProfileCloseTypeToString(user.getCloseType());
     }
 }

@@ -1,9 +1,9 @@
 package com.example.socialweb.models.entities;
 
-import com.example.socialweb.enums.roles.UserRole;
-import com.example.socialweb.enums.sex.UserSex;
+import com.example.socialweb.enums.ProfileCloseType;
+import com.example.socialweb.enums.UserRole;
+import com.example.socialweb.enums.UserSex;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -35,6 +35,8 @@ public class User {
     private UserSex sex;
     @Column(name = "register_date")
     private String registerDate;
+    @Column(name = "close_type")
+    private ProfileCloseType closeType;
 
     private User(Builder builder) {
         this.email = builder.userEmail;
@@ -45,6 +47,7 @@ public class User {
         this.sex = builder.userSex;
         this.friendsCount = 0;
         this.registerDate = new Date(System.currentTimeMillis()).toString();
+        this.closeType = builder.closeType;
     }
 
     public User() {
@@ -58,6 +61,7 @@ public class User {
         private String userPassword;
         private UserSex userSex;
         private List<UserRole> userRole;
+        private ProfileCloseType closeType;
 
         public Builder(String email, String password) {
             userEmail = email;
@@ -81,6 +85,10 @@ public class User {
 
         public Builder setRole(List<UserRole> list) {
             userRole = list;
+            return this;
+        }
+        public Builder setProfileCloseType(ProfileCloseType type){
+            closeType = type;
             return this;
         }
 

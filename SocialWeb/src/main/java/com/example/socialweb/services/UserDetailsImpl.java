@@ -1,7 +1,7 @@
 package com.example.socialweb.services;
 
-import com.example.socialweb.enums.roles.UserRole;
-import com.example.socialweb.enums.sex.UserSex;
+import com.example.socialweb.enums.UserRole;
+import com.example.socialweb.enums.UserSex;
 import com.example.socialweb.models.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;

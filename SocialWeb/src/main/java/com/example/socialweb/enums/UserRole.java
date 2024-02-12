@@ -1,4 +1,4 @@
-package com.example.socialweb.enums.roles;
+package com.example.socialweb.enums;
 
 public enum UserRole {
     USER, ADMIN, BANNED

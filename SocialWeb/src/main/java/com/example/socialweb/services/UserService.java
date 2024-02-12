@@ -1,24 +1,21 @@
 package com.example.socialweb.services;
 
-import com.example.socialweb.enums.roles.UserRole;
-import com.example.socialweb.enums.sex.UserSex;
+import com.example.socialweb.enums.ProfileCloseType;
+import com.example.socialweb.enums.UserRole;
+import com.example.socialweb.enums.UserSex;
 import com.example.socialweb.exceptions.WrongUserDataException;
-import com.example.socialweb.models.entities.Friendship;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.RegisterModel;
-import com.example.socialweb.models.responseModels.ProfileModel;
 import com.example.socialweb.repositories.FriendshipRepository;
 import com.example.socialweb.repositories.UserRepository;
 import com.example.socialweb.services.converters.UserConverter;
 import com.example.socialweb.services.validation.UserValidation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -52,6 +49,7 @@ public class UserService implements UserDetailsService {
     public void registration(RegisterModel registerModel, PasswordEncoder passwordEncoder) {
         if (UserValidation.checkUserData(registerModel) && !containsUserByEmail(registerModel.getEmail())) {
             UserSex sex = UserConverter.convertStringToSex(registerModel.getSex());
+            ProfileCloseType closeType = UserConverter.convertStringToProfileCloseType(registerModel.getProfileCloseType());
             List<UserRole> roles = new ArrayList<>();
             roles.add(UserRole.USER);
             User user = new User
@@ -60,6 +58,7 @@ public class UserService implements UserDetailsService {
                     .setSurname(registerModel.getSurname())
                     .setRole(roles)
                     .setSex(sex)
+                    .setProfileCloseType(closeType)
                     .build();
             userRepository.save(user);
         } else {

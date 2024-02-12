@@ -1,7 +1,5 @@
 package com.example.socialweb.services.validation;
 
-import com.example.socialweb.enums.sex.UserSex;
-import com.example.socialweb.exceptions.WrongUserDataException;
 import com.example.socialweb.models.requestModels.RegisterModel;
 
 public class UserValidation {
@@ -59,12 +57,16 @@ public class UserValidation {
     private static boolean checkSexValid(String sex) {
         return sex.equalsIgnoreCase("man") || sex.equalsIgnoreCase("woman");
     }
+    private static boolean checkCloseProfileTypeValid(String type){
+        return type.equalsIgnoreCase("close") || type.equalsIgnoreCase("open");
+    }
 
     public static boolean checkUserData(RegisterModel model) {
         return checkEmailValid(model.getEmail())
                 && checkNSValid(model.getName())
                 && checkNSValid(model.getSurname())
                 && checkSexValid(model.getSex())
-                && checkPasswordValid(model.getPassword());
+                && checkPasswordValid(model.getPassword())
+                && checkCloseProfileTypeValid(model.getProfileCloseType());
     }
 }

@@ -55,6 +55,8 @@ public class WebSecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(request -> request
                         .requestMatchers("/user/**").hasAnyAuthority("USER", "ADMIN")
+                        .requestMatchers("/friend/**").hasAnyAuthority("USER", "ADMIN")
+                        .requestMatchers("/message/**").hasAnyAuthority("USER", "ADMIN")
                         .requestMatchers("/auth/**").permitAll()
                         .anyRequest()
                         .fullyAuthenticated())

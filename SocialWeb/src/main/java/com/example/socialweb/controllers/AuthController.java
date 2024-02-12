@@ -18,10 +18,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+@RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
-@Slf4j
-@RestController
 public class AuthController {
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
@@ -46,7 +45,6 @@ public class AuthController {
         try {
             userService.registration(registerModel, passwordEncoder);
         } catch (WrongUserDataException e) {
-            log.info(e.getMessage());
             return ResponseEntity.ok(e.getMessage());
         }
         return ResponseEntity.ok(registerModel);
