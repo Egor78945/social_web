@@ -35,15 +35,28 @@ public class MessageController {
             return ResponseEntity.ok(e.getMessage());
         }
     }
+
     @GetMapping
-    public ResponseEntity<?> mySenders(HttpServletRequest request){
+    public ResponseEntity<?> mySenders(HttpServletRequest request) {
         User recipient = ServerUtils.getUserFromSession(request);
         List<Message> messages = messageService.getAllByRecipient(recipient);
-        if(!messages.isEmpty()) {
+        if (!messages.isEmpty()) {
             List<User> senders = MessageConverter.convertMessageToSender(messages);
             List<ProfileModel> profileModels = UserConverter.convertUserToProfileModel(senders);
             return ResponseEntity.ok(profileModels);
         } else
             return ResponseEntity.ok("You have not messages.");
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> messagesBySender(@PathVariable("id") Long id, HttpServletRequest request) {
+        User sender = userService.getUserById(id);
+        User recipient = ServerUtils.getUserFromSession(request);
+        try {
+            List<MessageModel> messages = messageService.getMessagesFromUser(sender, recipient);
+            return ResponseEntity.ok(messages);
+        } catch (RequestRejectedException e) {
+            return ResponseEntity.ok(e.getMessage());
+        }
     }
 }
