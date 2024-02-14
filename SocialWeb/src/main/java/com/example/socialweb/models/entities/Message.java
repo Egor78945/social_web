@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "message")
 @Data
@@ -23,14 +25,14 @@ public class Message {
     private String sendDate;
 
     public Message() {
-
+        this.sendDate = new Date(System.currentTimeMillis()).toString();
     }
 
     public Message(Builder builder) {
         this.sender = builder.sender;
         this.recipient = builder.recipient;
         this.message = builder.message;
-        this.sendDate = builder.sendDate;
+        this.sendDate = new Date(System.currentTimeMillis()).toString();
     }
 
     public static class Builder {
@@ -46,11 +48,6 @@ public class Message {
 
         public Builder setMessage(String message) {
             this.message = message;
-            return this;
-        }
-
-        public Builder setSendDate(String date) {
-            sendDate = date;
             return this;
         }
 

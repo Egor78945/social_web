@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -32,7 +31,6 @@ public class MessageService {
             User from1 = userRepository.findUserByEmail(from.getEmail());
             Message message = new Message.Builder(from1, to)
                     .setMessage(messageModel.getMessage())
-                    .setSendDate(new Date(System.currentTimeMillis()).toString())
                     .build();
             messageRepository.save(message);
         }

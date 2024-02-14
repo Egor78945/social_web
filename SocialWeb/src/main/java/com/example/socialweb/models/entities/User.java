@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -51,7 +52,9 @@ public class User {
     }
 
     public User() {
-
+        this.registerDate = new Date(System.currentTimeMillis()).toString();
+        this.friendsCount = 0;
+        this.role = new ArrayList<>();
     }
 
     public static class Builder {

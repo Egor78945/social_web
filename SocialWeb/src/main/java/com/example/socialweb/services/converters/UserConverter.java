@@ -11,9 +11,9 @@ import java.util.List;
 
 public class UserConverter {
     public static UserSex convertStringToSex(String sex) {
-        if (sex.equalsIgnoreCase(UserSex.MAN.toString()))
+        if (sex.equalsIgnoreCase("man"))
             return UserSex.MAN;
-        else if (sex.equalsIgnoreCase(UserSex.WOMAN.toString()))
+        else if (sex.equalsIgnoreCase("woman"))
             return UserSex.WOMAN;
         else
             throw new WrongUserDataException("This sex type is unknown.");

@@ -25,7 +25,7 @@ public class Friendship {
     private String date;
 
     public Friendship() {
-
+        date = new Date(System.currentTimeMillis()).toString();
     }
 
     public Friendship(User sender, User recipient) {

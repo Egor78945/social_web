@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    container_name: 'database'
+    environment:
+      - MYSQL_DATABASE=bestuser
+      - MYSQL_ROOT_PASSWORD=bestuser
+  app:
+    build: .
+    container_name: 'app'
+    ports:
+      - "80:80"
+
