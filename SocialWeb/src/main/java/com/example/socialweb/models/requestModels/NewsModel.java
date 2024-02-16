@@ -8,11 +8,13 @@ import lombok.Data;
 public class NewsModel {
     private String theme;
     private String description;
+    private Long likeCount;
     public NewsModel(){
 
     }
     public NewsModel(News news){
         this.description = news.getDescription();
         this.theme = NewsConverter.convertNewsThemeToString(news.getTheme());
+        this.likeCount = news.getLikeCount();
     }
 }

@@ -11,7 +11,7 @@ import java.util.Date;
 @Table(name = "news")
 @Data
 @EqualsAndHashCode
-public class News {
+public class News{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -24,9 +24,12 @@ public class News {
     private String date;
     @Column(name = "theme")
     private NewsTheme theme;
+    @Column(name = "like_count")
+    private Long likeCount;
 
     public News() {
         date = new Date(System.currentTimeMillis()).toString();
+        likeCount = 0L;
     }
 
     public News(Builder builder) {
@@ -34,6 +37,7 @@ public class News {
         description = builder.description;
         date = new Date(System.currentTimeMillis()).toString();
         theme = builder.theme;
+        likeCount = 0L;
     }
 
     public static class Builder {
