@@ -11,6 +11,7 @@ import com.example.socialweb.services.converters.MessageConverter;
 import com.example.socialweb.services.converters.UserConverter;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/message")
 @RequiredArgsConstructor
+@Slf4j
 public class MessageController {
     private final UserService userService;
     private final MessageService messageService;
@@ -30,8 +32,10 @@ public class MessageController {
         User to = userService.getUserById(id);
         try {
             messageService.send(from, to, messageModel);
+            log.info("Message has been sent.");
             return ResponseEntity.ok("Message has been sent.");
         } catch (RequestRejectedException e) {
+            log.info(e.getMessage());
             return ResponseEntity.ok(e.getMessage());
         }
     }

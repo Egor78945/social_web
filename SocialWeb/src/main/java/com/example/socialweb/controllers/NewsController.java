@@ -10,6 +10,7 @@ import com.example.socialweb.services.UserService;
 import com.example.socialweb.services.converters.NewsConverter;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/news")
 @RequiredArgsConstructor
+@Slf4j
 public class NewsController {
     private final NewsService newsService;
     private final UserService userService;
@@ -30,6 +32,7 @@ public class NewsController {
             User user = ServerUtils.getUserFromSession(request);
             newsService.postNews(newsModel, user);
         } catch (RequestRejectedException e) {
+            log.info(e.getMessage());
             return ResponseEntity.ok(e.getMessage());
         }
         return ResponseEntity.ok("News has been post.");
@@ -70,8 +73,10 @@ public class NewsController {
             User currentUser = ServerUtils.getUserFromSession(request);
             News news = newsService.getNewsById(id);
             newsService.deleteNews(news, currentUser);
+            log.info("News has been deleted.");
             return ResponseEntity.ok("The news has been deleted.");
         } catch (RequestRejectedException e) {
+            log.info(e.getMessage());
             return ResponseEntity.ok(e.getMessage());
         }
     }
@@ -80,9 +85,13 @@ public class NewsController {
     public ResponseEntity<String> likeNews(@PathVariable("id") Long id, HttpServletRequest request) {
         News news = newsService.getNewsById(id);
         User liker = ServerUtils.getUserFromSession(request);
-        if (likeService.like(news, liker))
+        if (likeService.like(news, liker)) {
+            log.info("You liked this news.");
             return ResponseEntity.ok("You liked this news.");
-        else
+        }
+        else {
+            log.info("Your removed like from this news.");
             return ResponseEntity.ok("You removed like from this news.");
+        }
     }
 }

@@ -10,6 +10,7 @@ import com.example.socialweb.services.validation.NewsValidation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class NewsService {
     private final NewsRepository newsRepository;
     private final UserRepository userRepository;
 
+    @Transactional
     public void postNews(NewsModel newsModel, User currentUser) {
         if (NewsValidation.isValidNews(newsModel)) {
             User user = userRepository.findUserById(currentUser.getId());
@@ -38,6 +40,7 @@ public class NewsService {
         return newsRepository.findNewsById(id);
     }
 
+    @Transactional
     public void deleteNews(News news, User currentUser) {
         if(news.getPublisher().getId().equals(currentUser.getId())){
             newsRepository.delete(news);

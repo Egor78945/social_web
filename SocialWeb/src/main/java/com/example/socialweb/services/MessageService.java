@@ -11,6 +11,7 @@ import com.example.socialweb.services.validation.MessageValidation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class MessageService {
     private final MessageRepository messageRepository;
     private final UserRepository userRepository;
 
+    @Transactional
     public void send(User from, User to, MessageModel messageModel) {
         if (from.getId().equals(to.getId()))
             throw new RequestRejectedException("You can not sends messages to yourself.");
@@ -44,6 +46,7 @@ public class MessageService {
         return messageRepository.findAllBySenderAndRecipient(sender, recipient);
     }
 
+    @Transactional
     public List<MessageModel> getMessagesFromUser(User sender, User recipient) {
         List<Message> messages = getAllBySenderAndRecipient(sender, recipient);
         if (!messages.isEmpty())

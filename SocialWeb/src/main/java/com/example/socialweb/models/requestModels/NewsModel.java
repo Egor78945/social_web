@@ -3,8 +3,12 @@ package com.example.socialweb.models.requestModels;
 import com.example.socialweb.models.entities.News;
 import com.example.socialweb.services.converters.NewsConverter;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @Data
+@EqualsAndHashCode
+@ToString
 public class NewsModel {
     private String theme;
     private String description;

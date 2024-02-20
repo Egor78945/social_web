@@ -11,7 +11,6 @@ import com.example.socialweb.repositories.UserRepository;
 import com.example.socialweb.services.converters.UserConverter;
 import com.example.socialweb.services.validation.UserValidation;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -24,11 +23,8 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
-    private final FriendshipRepository friendshipRepository;
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserDetailsImpl userDetails = new UserDetailsImpl();

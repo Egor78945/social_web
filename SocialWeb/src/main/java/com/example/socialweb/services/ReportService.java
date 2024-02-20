@@ -9,6 +9,9 @@ import com.example.socialweb.services.validation.ReportValidation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Iterator;
 
 @Service
 @RequiredArgsConstructor
@@ -16,6 +19,7 @@ public class ReportService {
     private final ReportRepository reportRepository;
     private final UserRepository userRepository;
 
+    @Transactional
     public void reportUser(User applicant, User appealed, ReportModel reportModel) {
         if(ReportValidation.isValidReport(reportModel) && !applicant.getId().equals(appealed.getId())){
             User user = userRepository.findUserById(applicant.getId());

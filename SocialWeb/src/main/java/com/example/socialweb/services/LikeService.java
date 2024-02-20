@@ -8,6 +8,7 @@ import com.example.socialweb.repositories.NewsRepository;
 import com.example.socialweb.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -16,6 +17,7 @@ public class LikeService {
     private final UserRepository userRepository;
     private final NewsRepository newsRepository;
 
+    @Transactional
     public boolean like(News news, User liker) {
         if (containsLikeByNewsAndLiker(news, liker)) {
             Like like = likeRepository.findLikeByNewsAndLiker(news, liker);
