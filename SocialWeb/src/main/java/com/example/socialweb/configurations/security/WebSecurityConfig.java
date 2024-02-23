@@ -1,7 +1,7 @@
 package com.example.socialweb.configurations.security;
 
 import com.example.socialweb.configurations.security.jwt.TokenFilter;
-import com.example.socialweb.services.UserService;
+import com.example.socialweb.services.userServices.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -59,6 +59,7 @@ public class WebSecurityConfig {
                         .requestMatchers("/message/**").hasAnyAuthority("USER", "ADMIN")
                         .requestMatchers("/news/**").hasAnyAuthority("USER", "ADMIN")
                         .requestMatchers("/report/**").hasAnyAuthority("USER", "ADMIN")
+                        .requestMatchers("/admin/**").hasAuthority("ADMIN")
                         .requestMatchers("/auth/**").permitAll()
                         .anyRequest()
                         .fullyAuthenticated())

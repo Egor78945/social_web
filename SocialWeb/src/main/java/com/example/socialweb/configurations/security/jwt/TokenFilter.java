@@ -1,6 +1,6 @@
 package com.example.socialweb.configurations.security.jwt;
 
-import com.example.socialweb.services.UserService;
+import com.example.socialweb.services.userServices.UserService;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

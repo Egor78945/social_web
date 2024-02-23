@@ -1,7 +1,11 @@
 FROM openjdk:21
 
-ADD out/artifacts/SocialWeb_jar/SocialWeb.jar sw.jar
+VOLUME /tmp
+
+ADD out/artifacts/SocialWeb_jar/SocialWeb.jar app.jar
+
+RUN sh -c 'touch /app'
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "sw.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]

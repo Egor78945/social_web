@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "user")
 @Data
 @EqualsAndHashCode
-public class User{
+public class User implements Comparable<User> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -57,6 +57,11 @@ public class User{
         this.role = new ArrayList<>();
     }
 
+    @Override
+    public int compareTo(User o) {
+        return this.name.compareTo(o.getName());
+    }
+
     public static class Builder {
         private String userEmail;
         private String userName;
@@ -90,7 +95,8 @@ public class User{
             userRole = list;
             return this;
         }
-        public Builder setProfileCloseType(ProfileCloseType type){
+
+        public Builder setProfileCloseType(ProfileCloseType type) {
             closeType = type;
             return this;
         }
@@ -98,5 +104,9 @@ public class User{
         public User build() {
             return new User(this);
         }
+    }
+
+    public boolean isBan() {
+        return this.role.isEmpty();
     }
 }

@@ -1,6 +1,6 @@
 package com.example.socialweb.configurations.security.jwt;
 
-import com.example.socialweb.services.UserDetailsImpl;
+import com.example.socialweb.services.userServices.UserDetailsImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
