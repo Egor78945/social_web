@@ -59,6 +59,7 @@ public class WebSecurityConfig {
                         .requestMatchers("/message/**").hasAnyAuthority("USER", "ADMIN")
                         .requestMatchers("/news/**").hasAnyAuthority("USER", "ADMIN")
                         .requestMatchers("/report/**").hasAnyAuthority("USER", "ADMIN")
+                        .requestMatchers("/support/**").hasAnyAuthority("USER", "ADMIN")
                         .requestMatchers("/admin/**").hasAuthority("ADMIN")
                         .requestMatchers("/auth/**").permitAll()
                         .anyRequest()

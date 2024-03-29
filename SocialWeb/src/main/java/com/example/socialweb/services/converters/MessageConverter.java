@@ -3,6 +3,7 @@ package com.example.socialweb.services.converters;
 import com.example.socialweb.models.entities.Message;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.MessageModel;
+import com.example.socialweb.models.requestModels.TechSupportRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +32,8 @@ public class MessageConverter {
             messageModels.add(convertMessageToMessageModel(m));
         }
         return messageModels;
+    }
+    public static TechSupportRequest convertMessageToTechSupportRequest(User user, MessageModel messageModel){
+        return new TechSupportRequest(user, messageModel);
     }
 }
