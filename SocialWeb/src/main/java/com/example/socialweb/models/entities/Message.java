@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 import java.util.Date;
 
 @Entity
-@Table(name = "message")
+@Table(name = "messages")
 @Data
 @EqualsAndHashCode
 public class Message {

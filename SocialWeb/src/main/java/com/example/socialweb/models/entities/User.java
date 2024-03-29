@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @Data
 @EqualsAndHashCode
 public class User implements Comparable<User> {
