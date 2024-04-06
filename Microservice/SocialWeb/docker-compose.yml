@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  db:
+    container_name: database
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=social_web
+      - POSTGRES_USER=bestuser
+      - POSTGRES_PASSWORD=bestuser
+    volumes:
+      - D:\postgres_datapart:/var/lib/postgresql/data
+    restart: always
+
+  app:
+    build: .
+    container_name: 'app'
+    ports:
+      - "8080:8080"
+    environment:
+      db-url: jdbc:postgresql://db:5432/social_web
+      db-username: bestuser
+      db-password: bestuser
+    depends_on:
+      - db
+    restart: always
+
