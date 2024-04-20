@@ -70,5 +70,4 @@ public class UserService implements UserDetailsService {
     public User getUserById(Long id) {
         return userRepository.findUserById(id);
     }
-
 }

@@ -1,5 +1,6 @@
 package com.example.socialweb.controllers.userControllers;
 
+import com.example.socialweb.configurations.utils.Cache;
 import com.example.socialweb.configurations.utils.ServerUtils;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.responseModels.ProfileModel;
@@ -17,10 +18,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
     private final UserService userService;
+    private final Cache cache;
 
     @GetMapping("/profile")
-    public ResponseEntity<ProfileModel> profile(HttpServletRequest request) {
-        User user = ServerUtils.getUserFromSession(request);
+    public ResponseEntity<ProfileModel> profile() {
+        User user = cache.getUser();
         return ResponseEntity.ok(new ProfileModel(user));
     }
 
