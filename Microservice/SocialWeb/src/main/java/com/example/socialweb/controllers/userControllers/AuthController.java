@@ -1,6 +1,7 @@
 package com.example.socialweb.controllers.userControllers;
 
 import com.example.socialweb.configurations.security.jwt.JWTCore;
+import com.example.socialweb.configurations.utils.Cache;
 import com.example.socialweb.exceptions.WrongUserDataException;
 import com.example.socialweb.models.requestModels.LoginModel;
 import com.example.socialweb.models.requestModels.RegisterModel;
@@ -25,6 +26,8 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final JWTCore jwtCore;
     private final PasswordEncoder passwordEncoder;
+    private final Cache cache;
+
     @GetMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginModel loginModel) {
         Authentication authentication;
@@ -34,6 +37,7 @@ public class AuthController {
             log.info(e.getMessage());
             throw new BadCredentialsException("Unauthorized");
         }
+        cache.loadUser(userService.getUserByEmail(loginModel.getEmail()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtCore.generateToken(authentication);
         log.info("Authentication token has been created.");

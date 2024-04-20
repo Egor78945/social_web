@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class AdminService {
     private final UserRepository userRepository;
-    private final NewsRepository newsRepository;
     private final BanDetailsService banDetailsService;
 
     @Transactional

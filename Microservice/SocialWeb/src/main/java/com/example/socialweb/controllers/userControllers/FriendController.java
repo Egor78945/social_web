@@ -1,5 +1,6 @@
 package com.example.socialweb.controllers.userControllers;
 
+import com.example.socialweb.configurations.utils.Cache;
 import com.example.socialweb.configurations.utils.ServerUtils;
 import com.example.socialweb.models.entities.Friendship;
 import com.example.socialweb.models.entities.User;
@@ -24,10 +25,11 @@ import java.util.List;
 public class FriendController {
     private final UserService userService;
     private final FriendshipService friendshipService;
+    private final Cache cache;
 
     @PostMapping("/request/{id}")
-    public ResponseEntity<String> friendRequest(@PathVariable("id") Long id, HttpServletRequest request) {
-        User sender = userService.getUserById(ServerUtils.getUserFromSession(request).getId());
+    public ResponseEntity<String> friendRequest(@PathVariable("id") Long id) {
+        User sender = cache.getUser();
         User recipient = userService.getUserById(id);
         try {
             friendshipService.friendRequest(sender, recipient);
@@ -40,18 +42,19 @@ public class FriendController {
     }
 
     @GetMapping("/request")
-    public ResponseEntity<List<ProfileModel>> friendRequests(HttpServletRequest request) {
-        List<Friendship> friendships = friendshipService.allByRecipientAndStatus(ServerUtils.getUserFromSession(request), false);
-        List<User> senders = FriendshipConverter.sendersToUsers(friendships);
-        List<ProfileModel> profileModels = UserConverter.convertUserToProfileModel(senders);
-        return ResponseEntity.ok(profileModels);
+    public ResponseEntity<?> friendRequests() {
+        List<ProfileModel> profileModels = friendshipService.getAllFriendRequests(cache.getUser(), false);
+        if (!profileModels.isEmpty())
+            return ResponseEntity.ok(profileModels);
+        else
+            return ResponseEntity.ok("You have not friend requests.");
     }
 
     @PostMapping("/request/confirm/{id}")
-    public ResponseEntity<String> confirmFriendRequest(@PathVariable("id") Long id, HttpServletRequest request) {
+    public ResponseEntity<String> confirmFriendRequest(@PathVariable("id") Long id) {
         try {
+            User recipient = cache.getUser();
             User sender = userService.getUserById(id);
-            User recipient = ServerUtils.getUserFromSession(request);
             friendshipService.confirmRequest(sender, recipient);
             log.info("Friendship request from user " + sender.getId() + " has been confirmed.");
             return ResponseEntity.ok("You confirmed this friend request.");
@@ -62,10 +65,10 @@ public class FriendController {
     }
 
     @PostMapping("/request/reject/{id}")
-    public ResponseEntity<String> rejectRequest(@PathVariable("id") Long id, HttpServletRequest request) {
+    public ResponseEntity<String> rejectRequest(@PathVariable("id") Long id) {
         try {
             User sender = userService.getUserById(id);
-            User recipient = ServerUtils.getUserFromSession(request);
+            User recipient = cache.getUser();
             friendshipService.rejectRequest(sender, recipient);
             log.info("Friendship request from user with id " + sender.getId() + " has been rejected.");
             return ResponseEntity.ok("You have rejected the request from this user.");
@@ -76,9 +79,9 @@ public class FriendController {
     }
 
     @PostMapping("/remove/{id}")
-    public ResponseEntity<String> removeFriend(@PathVariable("id") Long id, HttpServletRequest request) {
+    public ResponseEntity<String> removeFriend(@PathVariable("id") Long id) {
         try {
-            User sender = ServerUtils.getUserFromSession(request);
+            User sender = cache.getUser();
             User recipient = userService.getUserById(id);
             friendshipService.removeFriend(sender, recipient);
             log.info("User with id " + recipient.getId() + " is not longer your friend.");
@@ -90,14 +93,11 @@ public class FriendController {
     }
 
     @GetMapping
-    public ResponseEntity<?> allFriends(HttpServletRequest request) {
-        try {
-            List<Friendship> friendships = friendshipService.allByRecipientAndStatus(ServerUtils.getUserFromSession(request), true);
-            List<User> users = FriendshipConverter.friendshipToUserByUser(friendships, ServerUtils.getUserFromSession(request));
-            List<ProfileModel> profileModels = UserConverter.convertUserToProfileModel(users);
+    public ResponseEntity<?> allFriends() {
+        List<ProfileModel> profileModels = friendshipService.getAllFriendRequests(cache.getUser(), true);
+        if (!profileModels.isEmpty()) {
             return ResponseEntity.ok(profileModels);
-        } catch (RequestRejectedException e) {
-            return ResponseEntity.ok(e.getMessage());
-        }
+        } else
+            return ResponseEntity.ok("You have not friends.");
     }
 }

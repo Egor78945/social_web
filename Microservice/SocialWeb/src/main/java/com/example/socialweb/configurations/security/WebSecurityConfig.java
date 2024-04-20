@@ -41,6 +41,7 @@ public class WebSecurityConfig {
         auth.setPasswordEncoder(passwordEncoder());
         return auth;
     }
+
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();

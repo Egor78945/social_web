@@ -1,5 +1,6 @@
 package com.example.socialweb.controllers.adminControllers;
 
+import com.example.socialweb.configurations.utils.Cache;
 import com.example.socialweb.configurations.utils.ServerUtils;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.BanModel;
@@ -17,11 +18,12 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class AdminController {
     private final AdminService adminService;
+    private final Cache cache;
 
     @PostMapping("/ban")
-    public ResponseEntity<String> banUser(@RequestBody BanModel banModel, HttpServletRequest request) {
+    public ResponseEntity<String> banUser(@RequestBody BanModel banModel) {
         try {
-            User admin = ServerUtils.getUserFromSession(request);
+            User admin = cache.getUser();
             adminService.banUser(banModel, admin);
             log.info("The user is successfully banned.");
             return ResponseEntity.ok("The user is successfully banned.");

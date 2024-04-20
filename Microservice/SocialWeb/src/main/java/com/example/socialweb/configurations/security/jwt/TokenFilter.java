@@ -45,11 +45,6 @@ public class TokenFilter extends OncePerRequestFilter {
             UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
                     email, null, jwtCore.getRoleFromToken(jwt).stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList())
             );
-            if(cache.getUser() == null) {
-                User user = userService.getUserByEmail(email);
-                request.getSession().setAttribute("user", user);
-                cache.loadUser(user);
-            }
             SecurityContextHolder.getContext().setAuthentication(token);
         }
         filterChain.doFilter(request, response);

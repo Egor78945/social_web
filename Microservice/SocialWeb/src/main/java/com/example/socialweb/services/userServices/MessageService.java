@@ -30,8 +30,8 @@ public class MessageService {
         else if (to.getCloseType() == ProfileCloseType.CLOSE)
             throw new RequestRejectedException("You can not send message to user with close profile.");
         else {
-            User from1 = userRepository.findUserByEmail(from.getEmail());
-            Message message = new Message.Builder(from1, to)
+            from = userRepository.findUserById(from.getId());
+            Message message = new Message.Builder(from, to)
                     .setMessage(messageModel.getMessage())
                     .build();
             messageRepository.save(message);

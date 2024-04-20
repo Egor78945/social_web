@@ -1,27 +1,27 @@
-2024-04-19T18:56:00.872+03:00  INFO 6868 --- [main] c.e.socialweb.SocialWebApplication       : Starting SocialWebApplication using Java 20.0.2 with PID 6868 (C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb\target\classes started by Egor228 in C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb)
-2024-04-19T18:56:00.877+03:00 DEBUG 6868 --- [main] c.e.socialweb.SocialWebApplication       : Running with Spring Boot v3.1.5, Spring v6.0.13
-2024-04-19T18:56:00.878+03:00  INFO 6868 --- [main] c.e.socialweb.SocialWebApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-04-19T18:56:06.494+03:00  INFO 6868 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-19T18:56:06.872+03:00  INFO 6868 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 307 ms. Found 7 JPA repository interfaces.
-2024-04-19T18:56:10.373+03:00  INFO 6868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-04-19T18:56:10.393+03:00  INFO 6868 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-04-19T18:56:10.394+03:00  INFO 6868 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-04-19T18:56:10.540+03:00  INFO 6868 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-04-19T18:56:10.541+03:00  INFO 6868 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9340 ms
-2024-04-19T18:56:11.035+03:00  INFO 6868 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-19T18:56:11.167+03:00  INFO 6868 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-04-19T18:56:11.176+03:00  INFO 6868 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-04-19T18:56:11.691+03:00  INFO 6868 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-19T18:56:11.758+03:00  INFO 6868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-19T18:56:12.660+03:00  INFO 6868 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@467af68c
-2024-04-19T18:56:12.663+03:00  INFO 6868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-04-19T18:56:13.486+03:00  WARN 6868 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-04-19T18:56:16.413+03:00  INFO 6868 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-19T18:56:17.902+03:00  INFO 6868 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-19T18:56:18.957+03:00 DEBUG 6868 --- [main] c.e.s.c.security.jwt.TokenFilter         : Filter 'tokenFilter' configured for use
-2024-04-19T18:56:20.172+03:00  WARN 6868 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-19T18:56:20.817+03:00  INFO 6868 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@46c093b4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ff00844, org.springframework.security.web.context.SecurityContextHolderFilter@674c01ce, org.springframework.security.web.header.HeaderWriterFilter@466bf366, org.springframework.security.web.authentication.logout.LogoutFilter@57f1fbae, com.example.socialweb.configurations.security.jwt.TokenFilter@3ccc4ca0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@509e0253, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5dcec8e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20ee660b, org.springframework.security.web.session.SessionManagementFilter@66694050, org.springframework.security.web.access.ExceptionTranslationFilter@7f922523, org.springframework.security.web.access.intercept.AuthorizationFilter@72924f19]
-2024-04-19T18:56:21.827+03:00  INFO 6868 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2024-04-20T19:16:12.454+03:00  INFO 10656 --- [main] c.e.socialweb.SocialWebApplication       : Starting SocialWebApplication using Java 20.0.2 with PID 10656 (C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb\target\classes started by Egor228 in C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb)
+2024-04-20T19:16:12.468+03:00 DEBUG 10656 --- [main] c.e.socialweb.SocialWebApplication       : Running with Spring Boot v3.1.5, Spring v6.0.13
+2024-04-20T19:16:12.469+03:00  INFO 10656 --- [main] c.e.socialweb.SocialWebApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-04-20T19:16:20.246+03:00  INFO 10656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-20T19:16:20.675+03:00  INFO 10656 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 361 ms. Found 7 JPA repository interfaces.
+2024-04-20T19:16:24.574+03:00  INFO 10656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-04-20T19:16:24.596+03:00  INFO 10656 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-20T19:16:24.596+03:00  INFO 10656 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-04-20T19:16:24.794+03:00  INFO 10656 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-20T19:16:24.795+03:00  INFO 10656 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11937 ms
+2024-04-20T19:16:25.320+03:00  INFO 10656 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-20T19:16:25.460+03:00  INFO 10656 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-04-20T19:16:25.464+03:00  INFO 10656 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-04-20T19:16:26.070+03:00  INFO 10656 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-20T19:16:26.138+03:00  INFO 10656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-20T19:16:26.871+03:00  INFO 10656 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7adae08e
+2024-04-20T19:16:26.872+03:00  INFO 10656 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-20T19:16:27.107+03:00  WARN 10656 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-20T19:16:29.507+03:00  INFO 10656 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-20T19:16:29.875+03:00  INFO 10656 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-20T19:16:30.934+03:00 DEBUG 10656 --- [main] c.e.s.c.security.jwt.TokenFilter         : Filter 'tokenFilter' configured for use
+2024-04-20T19:16:32.157+03:00  WARN 10656 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-20T19:16:32.782+03:00  INFO 10656 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4e58eda2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75f9a35a, org.springframework.security.web.context.SecurityContextHolderFilter@22c14d10, org.springframework.security.web.header.HeaderWriterFilter@7f065f9e, org.springframework.security.web.authentication.logout.LogoutFilter@3c3357c7, com.example.socialweb.configurations.security.jwt.TokenFilter@2e27325d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38276668, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3344c1d7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7acbd3d0, org.springframework.security.web.session.SessionManagementFilter@e594c46, org.springframework.security.web.access.ExceptionTranslationFilter@2719139f, org.springframework.security.web.access.intercept.AuthorizationFilter@411e567e]
+2024-04-20T19:16:33.813+03:00  INFO 10656 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.servers = [localhost:9092]
 	client.dns.lookup = use_all_dns_ips
@@ -92,370 +92,143 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2024-04-19T18:56:21.941+03:00  INFO 6868 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
-2024-04-19T18:56:21.941+03:00  INFO 6868 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
-2024-04-19T18:56:21.941+03:00  INFO 6868 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1713542181939
-2024-04-19T18:56:21.985+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:21.987+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:22.102+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:22.102+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:22.211+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:22.211+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:22.536+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:22.536+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:22.968+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:22.969+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:23.940+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:23.940+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:25.025+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:25.026+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:25.997+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:25.997+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:26.974+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:26.974+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:27.949+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:27.950+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:28.925+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:28.926+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:30.113+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:30.113+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:31.004+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:31.004+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:32.086+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:32.087+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:33.385+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:33.386+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:34.357+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:34.357+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:35.439+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:35.440+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:36.630+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:36.630+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:37.600+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:37.601+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:38.678+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:38.679+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:39.763+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:39.764+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:40.953+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:40.954+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:42.033+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:42.034+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:43.221+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:43.222+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:44.189+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:44.190+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:45.383+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:45.383+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:46.580+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:46.580+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:47.440+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:47.440+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:48.521+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:48.521+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:49.603+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:49.603+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:50.580+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:50.580+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:51.662+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:51.663+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:51.958+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] o.a.k.c.a.i.AdminMetadataManager         : [AdminClient clientId=adminclient-1] Metadata update failed
+2024-04-20T19:16:33.943+03:00  INFO 10656 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2024-04-20T19:16:33.943+03:00  INFO 10656 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2024-04-20T19:16:33.943+03:00  INFO 10656 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1713629793942
+2024-04-20T19:16:34.559+03:00  INFO 10656 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
+2024-04-20T19:16:34.565+03:00  INFO 10656 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-04-20T19:16:34.565+03:00  INFO 10656 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-04-20T19:16:34.566+03:00  INFO 10656 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-04-20T19:16:34.594+03:00  INFO 10656 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-20T19:16:34.607+03:00  INFO 10656 --- [main] c.e.socialweb.SocialWebApplication       : Started SocialWebApplication in 23.373 seconds (process running for 30.551)
+2024-04-20T19:17:11.092+03:00  INFO 10656 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-20T19:17:11.094+03:00  INFO 10656 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-20T19:17:11.095+03:00  INFO 10656 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-04-20T19:17:11.902+03:00  INFO 10656 --- [http-nio-8080-exec-2] c.e.s.c.userControllers.AuthController   : Authentication token has been created.
+2024-04-20T19:19:38.691+03:00  INFO 10656 --- [http-nio-8080-exec-8] c.e.s.s.aspects.UserServiceAspect        : Attempt to register the user...
+2024-04-20T19:19:38.692+03:00  INFO 10656 --- [http-nio-8080-exec-8] c.e.s.s.aspects.UserServiceAspect        : Register user data: RegisterModel(email=Egor78396@gmail.com, name=Egor, surname=Petrov, password=654123egor, sex=man, profileCloseType=open)
+2024-04-20T19:20:03.040+03:00  INFO 10656 --- [http-nio-8080-exec-10] c.e.s.s.aspects.FriendshipServiceAspect  : Attempt to send friend request to the user...
+2024-04-20T19:20:03.073+03:00 ERROR 10656 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: detached entity passed to persist: com.example.socialweb.models.entities.User] with root cause
 
-org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: fetchMetadata
-
-2024-04-19T18:56:51.958+03:00 ERROR 6868 --- [main] o.springframework.kafka.core.KafkaAdmin  : Could not configure topics
-
-java.util.concurrent.TimeoutException: null
-	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960) ~[na:na]
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095) ~[na:na]
-	at org.apache.kafka.common.internals.KafkaFutureImpl.get(KafkaFutureImpl.java:180) ~[kafka-clients-3.4.1.jar:na]
-	at org.springframework.kafka.core.KafkaAdmin.initialize(KafkaAdmin.java:243) ~[spring-kafka-3.0.12.jar:3.0.12]
-	at org.springframework.kafka.core.KafkaAdmin.afterSingletonsInstantiated(KafkaAdmin.java:212) ~[spring-kafka-3.0.12.jar:3.0.12]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:984) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:950) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.5.jar:3.1.5]
-	at com.example.socialweb.SocialWebApplication.main(SocialWebApplication.java:11) ~[classes/:na]
-
-2024-04-19T18:56:52.733+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:52.734+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:53.711+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:53.712+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:54.798+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:54.798+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:55.885+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:55.885+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:56.863+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:56.864+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:57.952+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:57.952+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:56:58.930+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:56:58.931+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:57:00.124+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:57:00.124+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:57:01.313+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Node -1 disconnected.
-2024-04-19T18:57:01.313+03:00  WARN 6868 --- [kafka-admin-client-thread | adminclient-1] org.apache.kafka.clients.NetworkClient   : [AdminClient clientId=adminclient-1] Connection to node -1 (localhost/127.0.0.1:9092) could not be established. Broker may not be available.
-2024-04-19T18:57:01.979+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] o.a.k.clients.admin.KafkaAdminClient     : [AdminClient clientId=adminclient-1] Forcing a hard I/O thread shutdown. Requests in progress will be aborted.
-2024-04-19T18:57:01.980+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
-2024-04-19T18:57:01.980+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] o.a.k.c.a.i.AdminMetadataManager         : [AdminClient clientId=adminclient-1] Metadata update failed
-
-org.apache.kafka.common.errors.TimeoutException: The AdminClient thread has exited. Call: fetchMetadata
-
-2024-04-19T18:57:01.980+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] o.a.k.clients.admin.KafkaAdminClient     : [AdminClient clientId=adminclient-1] Timed out 2 remaining operation(s) during close.
-2024-04-19T18:57:01.984+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2024-04-19T18:57:01.985+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2024-04-19T18:57:01.985+03:00  INFO 6868 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2024-04-19T18:57:02.022+03:00  INFO 6868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-04-19T18:57:02.032+03:00  INFO 6868 --- [main] c.e.socialweb.SocialWebApplication       : Started SocialWebApplication in 62.366 seconds (process running for 67.331)
-2024-04-19T18:57:02.064+03:00  INFO 6868 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-04-19T18:57:02.066+03:00  INFO 6868 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-04-19T18:57:02.073+03:00  INFO 6868 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-04-19T19:05:19.999+03:00  INFO 5180 --- [main] c.e.socialweb.SocialWebApplication       : Starting SocialWebApplication using Java 20.0.2 with PID 5180 (C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb\target\classes started by Egor228 in C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb)
-2024-04-19T19:05:20.001+03:00 DEBUG 5180 --- [main] c.e.socialweb.SocialWebApplication       : Running with Spring Boot v3.1.5, Spring v6.0.13
-2024-04-19T19:05:20.002+03:00  INFO 5180 --- [main] c.e.socialweb.SocialWebApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-04-19T19:05:21.021+03:00  INFO 5180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-19T19:05:21.154+03:00  INFO 5180 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 7 JPA repository interfaces.
-2024-04-19T19:05:22.185+03:00  INFO 5180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-04-19T19:05:22.195+03:00  INFO 5180 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-04-19T19:05:22.196+03:00  INFO 5180 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-04-19T19:05:22.318+03:00  INFO 5180 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-04-19T19:05:22.320+03:00  INFO 5180 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2251 ms
-2024-04-19T19:05:22.600+03:00  INFO 5180 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-19T19:05:22.663+03:00  INFO 5180 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-04-19T19:05:22.666+03:00  INFO 5180 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-04-19T19:05:23.009+03:00  INFO 5180 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-19T19:05:23.043+03:00  INFO 5180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-19T19:05:23.255+03:00  INFO 5180 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@50df37eb
-2024-04-19T19:05:23.258+03:00  INFO 5180 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-04-19T19:05:23.301+03:00  WARN 5180 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-04-19T19:05:24.698+03:00  INFO 5180 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-19T19:05:24.927+03:00  INFO 5180 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-19T19:05:25.663+03:00 DEBUG 5180 --- [main] c.e.s.c.security.jwt.TokenFilter         : Filter 'tokenFilter' configured for use
-2024-04-19T19:05:26.729+03:00  WARN 5180 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-19T19:05:27.204+03:00  INFO 5180 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4791d904, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ba516ff, org.springframework.security.web.context.SecurityContextHolderFilter@307ba188, org.springframework.security.web.header.HeaderWriterFilter@38568876, org.springframework.security.web.authentication.logout.LogoutFilter@569026df, com.example.socialweb.configurations.security.jwt.TokenFilter@13868c41, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73f0b216, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42a198dd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3bbb3c84, org.springframework.security.web.session.SessionManagementFilter@765e5a55, org.springframework.security.web.access.ExceptionTranslationFilter@3bfead8d, org.springframework.security.web.access.intercept.AuthorizationFilter@672549f3]
-2024-04-19T19:05:28.061+03:00  INFO 5180 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
-	auto.include.jmx.reporter = true
-	bootstrap.servers = [localhost:9092]
-	client.dns.lookup = use_all_dns_ips
-	client.id = 
-	connections.max.idle.ms = 300000
-	default.api.timeout.ms = 60000
-	metadata.max.age.ms = 300000
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retries = 2147483647
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-
-2024-04-19T19:05:28.145+03:00  INFO 5180 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
-2024-04-19T19:05:28.145+03:00  INFO 5180 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
-2024-04-19T19:05:28.145+03:00  INFO 5180 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1713542728143
-2024-04-19T19:05:28.827+03:00 ERROR 5180 --- [main] o.springframework.kafka.core.KafkaAdmin  : Failed to create topics
-
-org.apache.kafka.common.errors.InvalidTopicException: Topic name is invalid: 'techsupport ' contains one or more characters other than ASCII alphanumerics, '.', '_' and '-'
-
-2024-04-19T19:05:28.830+03:00 ERROR 5180 --- [main] o.springframework.kafka.core.KafkaAdmin  : Could not configure topics
-
-org.springframework.kafka.KafkaException: Failed to create topics
-	at org.springframework.kafka.core.KafkaAdmin.addTopics(KafkaAdmin.java:532) ~[spring-kafka-3.0.12.jar:3.0.12]
-	at org.springframework.kafka.core.KafkaAdmin.addOrModifyTopicsIfNeeded(KafkaAdmin.java:379) ~[spring-kafka-3.0.12.jar:3.0.12]
-	at org.springframework.kafka.core.KafkaAdmin.initialize(KafkaAdmin.java:246) ~[spring-kafka-3.0.12.jar:3.0.12]
-	at org.springframework.kafka.core.KafkaAdmin.afterSingletonsInstantiated(KafkaAdmin.java:212) ~[spring-kafka-3.0.12.jar:3.0.12]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:984) ~[spring-beans-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:950) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.13.jar:6.0.13]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.5.jar:3.1.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.5.jar:3.1.5]
-	at com.example.socialweb.SocialWebApplication.main(SocialWebApplication.java:11) ~[classes/:na]
-Caused by: org.apache.kafka.common.errors.InvalidTopicException: Topic name is invalid: 'techsupport ' contains one or more characters other than ASCII alphanumerics, '.', '_' and '-'
-
-2024-04-19T19:05:28.832+03:00  INFO 5180 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
-2024-04-19T19:05:28.839+03:00  INFO 5180 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2024-04-19T19:05:28.840+03:00  INFO 5180 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2024-04-19T19:05:28.841+03:00  INFO 5180 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2024-04-19T19:05:28.874+03:00  INFO 5180 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-04-19T19:05:28.885+03:00  INFO 5180 --- [main] c.e.socialweb.SocialWebApplication       : Started SocialWebApplication in 9.485 seconds (process running for 10.431)
-2024-04-19T19:08:35.546+03:00  INFO 5180 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-04-19T19:08:35.549+03:00  INFO 5180 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-04-19T19:08:35.557+03:00  INFO 5180 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-04-19T19:08:38.737+03:00  INFO 6564 --- [main] c.e.socialweb.SocialWebApplication       : Starting SocialWebApplication using Java 20.0.2 with PID 6564 (C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb\target\classes started by Egor228 in C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb)
-2024-04-19T19:08:38.739+03:00 DEBUG 6564 --- [main] c.e.socialweb.SocialWebApplication       : Running with Spring Boot v3.1.5, Spring v6.0.13
-2024-04-19T19:08:38.740+03:00  INFO 6564 --- [main] c.e.socialweb.SocialWebApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-04-19T19:08:39.728+03:00  INFO 6564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-19T19:08:39.854+03:00  INFO 6564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 7 JPA repository interfaces.
-2024-04-19T19:08:40.875+03:00  INFO 6564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-04-19T19:08:40.886+03:00  INFO 6564 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-04-19T19:08:40.886+03:00  INFO 6564 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-04-19T19:08:41.009+03:00  INFO 6564 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-04-19T19:08:41.009+03:00  INFO 6564 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2204 ms
-2024-04-19T19:08:41.275+03:00  INFO 6564 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-19T19:08:41.337+03:00  INFO 6564 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-04-19T19:08:41.341+03:00  INFO 6564 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-04-19T19:08:41.681+03:00  INFO 6564 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-19T19:08:41.714+03:00  INFO 6564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-19T19:08:41.929+03:00  INFO 6564 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@473847fb
-2024-04-19T19:08:41.930+03:00  INFO 6564 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-04-19T19:08:41.971+03:00  WARN 6564 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-04-19T19:08:43.338+03:00  INFO 6564 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-19T19:08:43.550+03:00  INFO 6564 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-19T19:08:44.260+03:00 DEBUG 6564 --- [main] c.e.s.c.security.jwt.TokenFilter         : Filter 'tokenFilter' configured for use
-2024-04-19T19:08:45.269+03:00  WARN 6564 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-19T19:08:45.732+03:00  INFO 6564 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@52cda4bd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40aaf656, org.springframework.security.web.context.SecurityContextHolderFilter@7bc239db, org.springframework.security.web.header.HeaderWriterFilter@3ed2a30c, org.springframework.security.web.authentication.logout.LogoutFilter@5a8149f6, com.example.socialweb.configurations.security.jwt.TokenFilter@1d982fbe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e356ed6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c3f81ef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a183fa6, org.springframework.security.web.session.SessionManagementFilter@3437fc4f, org.springframework.security.web.access.ExceptionTranslationFilter@76685ab0, org.springframework.security.web.access.intercept.AuthorizationFilter@c680819]
-2024-04-19T19:08:46.523+03:00  INFO 6564 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
-	auto.include.jmx.reporter = true
-	bootstrap.servers = [localhost:9092]
-	client.dns.lookup = use_all_dns_ips
-	client.id = 
-	connections.max.idle.ms = 300000
-	default.api.timeout.ms = 60000
-	metadata.max.age.ms = 300000
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retries = 2147483647
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-
-2024-04-19T19:08:46.608+03:00  INFO 6564 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
-2024-04-19T19:08:46.609+03:00  INFO 6564 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
-2024-04-19T19:08:46.609+03:00  INFO 6564 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1713542926605
-2024-04-19T19:08:47.723+03:00  INFO 6564 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
-2024-04-19T19:08:47.730+03:00  INFO 6564 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2024-04-19T19:08:47.730+03:00  INFO 6564 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2024-04-19T19:08:47.730+03:00  INFO 6564 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2024-04-19T19:08:47.751+03:00  INFO 6564 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-04-19T19:08:47.763+03:00  INFO 6564 --- [main] c.e.socialweb.SocialWebApplication       : Started SocialWebApplication in 9.621 seconds (process running for 10.514)
-2024-04-19T19:09:07.336+03:00  INFO 6564 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-04-19T19:09:07.337+03:00  INFO 6564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-04-19T19:09:07.338+03:00  INFO 6564 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-04-19T19:09:08.149+03:00  INFO 6564 --- [http-nio-8080-exec-2] c.e.s.c.userControllers.AuthController   : Authentication token has been created.
-2024-04-19T19:09:28.868+03:00 ERROR 6564 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
-
-java.lang.NullPointerException: Cannot invoke "java.util.Map.put(Object, Object)" because "this.cacheMap" is null
-	at com.example.socialweb.configurations.utils.Cache.loadUser(Cache.java:16) ~[classes/:na]
-	at com.example.socialweb.configurations.security.jwt.TokenFilter.doFilterInternal(TokenFilter.java:50) ~[classes/:na]
+org.hibernate.PersistentObjectException: detached entity passed to persist: com.example.socialweb.models.entities.User
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:88) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:797) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.engine.spi.CascadingActions$7.cascade(CascadingActions.java:290) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.engine.spi.CascadingActions$7.cascade(CascadingActions.java:280) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeToOne(Cascade.java:518) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeAssociation(Cascade.java:439) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.engine.internal.Cascade.cascadeProperty(Cascade.java:225) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.engine.internal.Cascade.cascade(Cascade.java:158) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.cascadeBeforeSave(AbstractSaveEventListener.java:459) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:275) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:180) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:140) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:175) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:93) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:755) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:739) ~[hibernate-core-6.2.13.Final.jar:6.2.13.Final]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:360) ~[spring-orm-6.0.13.jar:6.0.13]
+	at jdk.proxy2/jdk.proxy2.$Proxy115.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-6.0.13.jar:6.0.13]
+	at jdk.proxy2/jdk.proxy2.$Proxy115.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:618) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:288) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:136) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:120) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:72) ~[spring-data-commons-3.1.5.jar:3.1.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.0.13.jar:6.0.13]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391) ~[spring-tx-6.0.13.jar:6.0.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164) ~[spring-data-jpa-3.1.5.jar:3.1.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244) ~[spring-aop-6.0.13.jar:6.0.13]
+	at jdk.proxy2/jdk.proxy2.$Proxy124.save(Unknown Source) ~[na:na]
+	at com.example.socialweb.services.userServices.FriendshipService.friendRequest(FriendshipService.java:44) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-6.0.13.jar:6.0.13]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:391) ~[spring-tx-6.0.13.jar:6.0.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:751) ~[spring-aop-6.0.13.jar:6.0.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703) ~[spring-aop-6.0.13.jar:6.0.13]
+	at com.example.socialweb.services.userServices.FriendshipService$$SpringCGLIB$$0.friendRequest(<generated>) ~[classes/:na]
+	at com.example.socialweb.controllers.userControllers.FriendController.friendRequest(FriendController.java:35) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.15.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.13.jar:6.0.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.15.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.0.13.jar:6.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.1.5.jar:6.1.5]
+	at com.example.socialweb.configurations.security.jwt.TokenFilter.doFilterInternal(TokenFilter.java:55) ~[classes/:na]
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.13.jar:6.0.13]
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.1.5.jar:6.1.5]
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.1.5.jar:6.1.5]
@@ -509,33 +282,33 @@ java.lang.NullPointerException: Cannot invoke "java.util.Map.put(Object, Object)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.15.jar:10.1.15]
 	at java.base/java.lang.Thread.run(Thread.java:1623) ~[na:na]
 
-2024-04-19T19:10:02.411+03:00  INFO 6564 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-04-19T19:10:02.413+03:00  INFO 6564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-04-19T19:10:02.421+03:00  INFO 6564 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-04-19T19:10:08.269+03:00  INFO 3372 --- [main] c.e.socialweb.SocialWebApplication       : Starting SocialWebApplication using Java 20.0.2 with PID 3372 (C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb\target\classes started by Egor228 in C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb)
-2024-04-19T19:10:08.271+03:00 DEBUG 3372 --- [main] c.e.socialweb.SocialWebApplication       : Running with Spring Boot v3.1.5, Spring v6.0.13
-2024-04-19T19:10:08.272+03:00  INFO 3372 --- [main] c.e.socialweb.SocialWebApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-04-19T19:10:09.268+03:00  INFO 3372 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-19T19:10:09.422+03:00  INFO 3372 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 7 JPA repository interfaces.
-2024-04-19T19:10:10.681+03:00  INFO 3372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-04-19T19:10:10.692+03:00  INFO 3372 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-04-19T19:10:10.692+03:00  INFO 3372 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-04-19T19:10:10.828+03:00  INFO 3372 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-04-19T19:10:10.829+03:00  INFO 3372 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2489 ms
-2024-04-19T19:10:11.098+03:00  INFO 3372 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-19T19:10:11.160+03:00  INFO 3372 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-04-19T19:10:11.163+03:00  INFO 3372 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-04-19T19:10:11.508+03:00  INFO 3372 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-19T19:10:11.542+03:00  INFO 3372 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-19T19:10:11.772+03:00  INFO 3372 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@270f28cf
-2024-04-19T19:10:11.774+03:00  INFO 3372 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-04-19T19:10:11.818+03:00  WARN 3372 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-04-19T19:10:13.514+03:00  INFO 3372 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-19T19:10:13.744+03:00  INFO 3372 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-19T19:10:14.549+03:00 DEBUG 3372 --- [main] c.e.s.c.security.jwt.TokenFilter         : Filter 'tokenFilter' configured for use
-2024-04-19T19:10:15.914+03:00  WARN 3372 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-19T19:10:16.386+03:00  INFO 3372 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@40aaf656, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a183fa6, org.springframework.security.web.context.SecurityContextHolderFilter@709c6768, org.springframework.security.web.header.HeaderWriterFilter@adbc3bc, org.springframework.security.web.authentication.logout.LogoutFilter@672549f3, com.example.socialweb.configurations.security.jwt.TokenFilter@67d55a46, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@403b7be3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@374013e8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@167ccc3c, org.springframework.security.web.session.SessionManagementFilter@42a198dd, org.springframework.security.web.access.ExceptionTranslationFilter@7bbe5548, org.springframework.security.web.access.intercept.AuthorizationFilter@52cda4bd]
-2024-04-19T19:10:17.281+03:00  INFO 3372 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2024-04-20T19:32:35.282+03:00  INFO 10656 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-20T19:32:35.285+03:00  INFO 10656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-20T19:32:35.295+03:00  INFO 10656 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-20T19:32:43.286+03:00  INFO 5868 --- [main] c.e.socialweb.SocialWebApplication       : Starting SocialWebApplication using Java 20.0.2 with PID 5868 (C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb\target\classes started by Egor228 in C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb)
+2024-04-20T19:32:43.288+03:00 DEBUG 5868 --- [main] c.e.socialweb.SocialWebApplication       : Running with Spring Boot v3.1.5, Spring v6.0.13
+2024-04-20T19:32:43.289+03:00  INFO 5868 --- [main] c.e.socialweb.SocialWebApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-04-20T19:32:44.298+03:00  INFO 5868 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-20T19:32:44.411+03:00  INFO 5868 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 7 JPA repository interfaces.
+2024-04-20T19:32:45.389+03:00  INFO 5868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-04-20T19:32:45.400+03:00  INFO 5868 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-20T19:32:45.401+03:00  INFO 5868 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-04-20T19:32:45.524+03:00  INFO 5868 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-20T19:32:45.525+03:00  INFO 5868 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2151 ms
+2024-04-20T19:32:45.808+03:00  INFO 5868 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-20T19:32:45.872+03:00  INFO 5868 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-04-20T19:32:45.876+03:00  INFO 5868 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-04-20T19:32:46.215+03:00  INFO 5868 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-20T19:32:46.246+03:00  INFO 5868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-20T19:32:46.458+03:00  INFO 5868 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@74b97416
+2024-04-20T19:32:46.460+03:00  INFO 5868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-20T19:32:46.500+03:00  WARN 5868 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-20T19:32:47.882+03:00  INFO 5868 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-20T19:32:48.098+03:00  INFO 5868 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-20T19:32:48.802+03:00 DEBUG 5868 --- [main] c.e.s.c.security.jwt.TokenFilter         : Filter 'tokenFilter' configured for use
+2024-04-20T19:32:49.821+03:00  WARN 5868 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-20T19:32:50.285+03:00  INFO 5868 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@73543048, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1851f19f, org.springframework.security.web.context.SecurityContextHolderFilter@3aebdb4, org.springframework.security.web.header.HeaderWriterFilter@113a89c5, org.springframework.security.web.authentication.logout.LogoutFilter@39303a6, com.example.socialweb.configurations.security.jwt.TokenFilter@13868c41, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1db7c267, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73796ae5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33f3ebfc, org.springframework.security.web.session.SessionManagementFilter@347f0950, org.springframework.security.web.access.ExceptionTranslationFilter@2ac7c683, org.springframework.security.web.access.intercept.AuthorizationFilter@4bc49d70]
+2024-04-20T19:32:51.091+03:00  INFO 5868 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.servers = [localhost:9092]
 	client.dns.lookup = use_all_dns_ips
@@ -606,46 +379,42 @@ java.lang.NullPointerException: Cannot invoke "java.util.Map.put(Object, Object)
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2024-04-19T19:10:17.369+03:00  INFO 3372 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
-2024-04-19T19:10:17.370+03:00  INFO 3372 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
-2024-04-19T19:10:17.370+03:00  INFO 3372 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1713543017368
-2024-04-19T19:10:17.789+03:00  INFO 3372 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
-2024-04-19T19:10:17.795+03:00  INFO 3372 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2024-04-19T19:10:17.796+03:00  INFO 3372 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2024-04-19T19:10:17.796+03:00  INFO 3372 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2024-04-19T19:10:17.828+03:00  INFO 3372 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-04-19T19:10:17.840+03:00  INFO 3372 --- [main] c.e.socialweb.SocialWebApplication       : Started SocialWebApplication in 10.156 seconds (process running for 11.027)
-2024-04-19T19:10:34.264+03:00  INFO 3372 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-04-19T19:10:34.265+03:00  INFO 3372 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-04-19T19:10:34.266+03:00  INFO 3372 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-04-19T19:10:34.798+03:00  INFO 3372 --- [http-nio-8080-exec-2] c.e.s.c.userControllers.AuthController   : Authentication token has been created.
-2024-04-19T19:13:34.557+03:00  INFO 3372 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-04-19T19:13:34.559+03:00  INFO 3372 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-04-19T19:13:34.569+03:00  INFO 3372 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-04-19T19:18:29.074+03:00  INFO 9820 --- [main] c.e.socialweb.SocialWebApplication       : Starting SocialWebApplication using Java 20.0.2 with PID 9820 (C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb\target\classes started by Egor228 in C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb)
-2024-04-19T19:18:29.076+03:00 DEBUG 9820 --- [main] c.e.socialweb.SocialWebApplication       : Running with Spring Boot v3.1.5, Spring v6.0.13
-2024-04-19T19:18:29.077+03:00  INFO 9820 --- [main] c.e.socialweb.SocialWebApplication       : No active profile set, falling back to 1 default profile: "default"
-2024-04-19T19:18:30.139+03:00  INFO 9820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-04-19T19:18:30.259+03:00  INFO 9820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 7 JPA repository interfaces.
-2024-04-19T19:18:31.256+03:00  INFO 9820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-04-19T19:18:31.267+03:00  INFO 9820 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-04-19T19:18:31.268+03:00  INFO 9820 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-04-19T19:18:31.377+03:00  INFO 9820 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-04-19T19:18:31.378+03:00  INFO 9820 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2235 ms
-2024-04-19T19:18:31.662+03:00  INFO 9820 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-04-19T19:18:31.742+03:00  INFO 9820 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
-2024-04-19T19:18:31.746+03:00  INFO 9820 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-04-19T19:18:32.081+03:00  INFO 9820 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-04-19T19:18:32.112+03:00  INFO 9820 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-19T19:18:32.328+03:00  INFO 9820 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3005623b
-2024-04-19T19:18:32.329+03:00  INFO 9820 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-04-19T19:18:32.370+03:00  WARN 9820 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-04-19T19:18:33.750+03:00  INFO 9820 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-04-19T19:18:33.975+03:00  INFO 9820 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-04-19T19:18:34.693+03:00 DEBUG 9820 --- [main] c.e.s.c.security.jwt.TokenFilter         : Filter 'tokenFilter' configured for use
-2024-04-19T19:18:35.790+03:00  WARN 9820 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-04-19T19:18:36.263+03:00  INFO 9820 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@73543048, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1851f19f, org.springframework.security.web.context.SecurityContextHolderFilter@3aebdb4, org.springframework.security.web.header.HeaderWriterFilter@113a89c5, org.springframework.security.web.authentication.logout.LogoutFilter@39303a6, com.example.socialweb.configurations.security.jwt.TokenFilter@ec1b776, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1db7c267, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73796ae5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33f3ebfc, org.springframework.security.web.session.SessionManagementFilter@347f0950, org.springframework.security.web.access.ExceptionTranslationFilter@2ac7c683, org.springframework.security.web.access.intercept.AuthorizationFilter@4bc49d70]
-2024-04-19T19:18:37.065+03:00  INFO 9820 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2024-04-20T19:32:51.172+03:00  INFO 5868 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2024-04-20T19:32:51.172+03:00  INFO 5868 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2024-04-20T19:32:51.173+03:00  INFO 5868 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1713630771170
+2024-04-20T19:32:51.598+03:00  INFO 5868 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
+2024-04-20T19:32:51.605+03:00  INFO 5868 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-04-20T19:32:51.605+03:00  INFO 5868 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-04-20T19:32:51.605+03:00  INFO 5868 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-04-20T19:32:51.622+03:00  INFO 5868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-20T19:32:51.633+03:00  INFO 5868 --- [main] c.e.socialweb.SocialWebApplication       : Started SocialWebApplication in 8.968 seconds (process running for 9.814)
+2024-04-20T19:39:08.851+03:00  INFO 5868 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-20T19:39:08.853+03:00  INFO 5868 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-20T19:39:08.860+03:00  INFO 5868 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-20T19:39:33.746+03:00  INFO 284 --- [main] c.e.socialweb.SocialWebApplication       : Starting SocialWebApplication using Java 20.0.2 with PID 284 (C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb\target\classes started by Egor228 in C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb)
+2024-04-20T19:39:33.748+03:00 DEBUG 284 --- [main] c.e.socialweb.SocialWebApplication       : Running with Spring Boot v3.1.5, Spring v6.0.13
+2024-04-20T19:39:33.749+03:00  INFO 284 --- [main] c.e.socialweb.SocialWebApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-04-20T19:39:34.783+03:00  INFO 284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-20T19:39:34.899+03:00  INFO 284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 7 JPA repository interfaces.
+2024-04-20T19:39:36.167+03:00  INFO 284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-04-20T19:39:36.176+03:00  INFO 284 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-20T19:39:36.177+03:00  INFO 284 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-04-20T19:39:36.283+03:00  INFO 284 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-20T19:39:36.284+03:00  INFO 284 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2471 ms
+2024-04-20T19:39:36.577+03:00  INFO 284 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-20T19:39:36.653+03:00  INFO 284 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-04-20T19:39:36.657+03:00  INFO 284 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-04-20T19:39:37.013+03:00  INFO 284 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-20T19:39:37.043+03:00  INFO 284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-20T19:39:37.274+03:00  INFO 284 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4b508371
+2024-04-20T19:39:37.275+03:00  INFO 284 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-20T19:39:37.318+03:00  WARN 284 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-20T19:39:38.762+03:00  INFO 284 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-20T19:39:38.995+03:00  INFO 284 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-20T19:39:40.062+03:00 DEBUG 284 --- [main] c.e.s.c.security.jwt.TokenFilter         : Filter 'tokenFilter' configured for use
+2024-04-20T19:39:41.223+03:00  WARN 284 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-20T19:39:41.754+03:00  INFO 284 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7cddc50f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e60890c, org.springframework.security.web.context.SecurityContextHolderFilter@3437fc4f, org.springframework.security.web.header.HeaderWriterFilter@76685ab0, org.springframework.security.web.authentication.logout.LogoutFilter@60cbba57, com.example.socialweb.configurations.security.jwt.TokenFilter@13868c41, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5924ea91, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@403b7be3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c680819, org.springframework.security.web.session.SessionManagementFilter@73f0b216, org.springframework.security.web.access.ExceptionTranslationFilter@6c4c32ff, org.springframework.security.web.access.intercept.AuthorizationFilter@3f0c2eff]
+2024-04-20T19:39:42.680+03:00  INFO 284 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.servers = [localhost:9092]
 	client.dns.lookup = use_all_dns_ips
@@ -716,19 +485,134 @@ java.lang.NullPointerException: Cannot invoke "java.util.Map.put(Object, Object)
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2024-04-19T19:18:37.146+03:00  INFO 9820 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
-2024-04-19T19:18:37.146+03:00  INFO 9820 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
-2024-04-19T19:18:37.146+03:00  INFO 9820 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1713543517144
-2024-04-19T19:18:37.562+03:00  INFO 9820 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
-2024-04-19T19:18:37.568+03:00  INFO 9820 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2024-04-19T19:18:37.569+03:00  INFO 9820 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2024-04-19T19:18:37.569+03:00  INFO 9820 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2024-04-19T19:18:37.588+03:00  INFO 9820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-04-19T19:18:37.599+03:00  INFO 9820 --- [main] c.e.socialweb.SocialWebApplication       : Started SocialWebApplication in 9.117 seconds (process running for 10.058)
-2024-04-19T19:19:03.694+03:00  INFO 9820 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-04-19T19:19:03.695+03:00  INFO 9820 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-04-19T19:19:03.697+03:00  INFO 9820 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2024-04-19T19:19:04.277+03:00  INFO 9820 --- [http-nio-8080-exec-3] c.e.s.c.userControllers.AuthController   : Authentication token has been created.
-2024-04-19T19:20:33.793+03:00  INFO 9820 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-04-19T19:20:33.795+03:00  INFO 9820 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-04-19T19:20:33.801+03:00  INFO 9820 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-20T19:39:42.779+03:00  INFO 284 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2024-04-20T19:39:42.779+03:00  INFO 284 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2024-04-20T19:39:42.780+03:00  INFO 284 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1713631182777
+2024-04-20T19:39:43.259+03:00  INFO 284 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
+2024-04-20T19:39:43.264+03:00  INFO 284 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-04-20T19:39:43.265+03:00  INFO 284 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-04-20T19:39:43.265+03:00  INFO 284 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-04-20T19:39:43.282+03:00  INFO 284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-20T19:39:43.293+03:00  INFO 284 --- [main] c.e.socialweb.SocialWebApplication       : Started SocialWebApplication in 10.116 seconds (process running for 11.112)
+2024-04-20T19:39:45.452+03:00  INFO 284 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-20T19:39:45.453+03:00  INFO 284 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-20T19:39:45.455+03:00  INFO 284 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-04-20T19:39:46.046+03:00  INFO 284 --- [http-nio-8080-exec-2] c.e.s.c.userControllers.AuthController   : Authentication token has been created.
+2024-04-20T19:40:10.291+03:00  INFO 284 --- [http-nio-8080-exec-4] c.e.s.s.aspects.FriendshipServiceAspect  : Attempt to send friend request to the user...
+2024-04-20T19:40:10.468+03:00  INFO 284 --- [http-nio-8080-exec-4] c.e.s.c.u.FriendController               : Request to user with id 2 has been sent.
+2024-04-20T19:40:28.042+03:00  INFO 284 --- [http-nio-8080-exec-5] c.e.s.c.userControllers.AuthController   : Authentication token has been created.
+2024-04-20T19:40:51.453+03:00  INFO 284 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-20T19:40:51.456+03:00  INFO 284 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-20T19:40:51.465+03:00  INFO 284 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-20T19:51:40.262+03:00  INFO 1516 --- [main] c.e.socialweb.SocialWebApplication       : Starting SocialWebApplication using Java 20.0.2 with PID 1516 (C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb\target\classes started by Egor228 in C:\Users\Egor228\Desktop\git_sw\Microservice\SocialWeb)
+2024-04-20T19:51:40.265+03:00 DEBUG 1516 --- [main] c.e.socialweb.SocialWebApplication       : Running with Spring Boot v3.1.5, Spring v6.0.13
+2024-04-20T19:51:40.266+03:00  INFO 1516 --- [main] c.e.socialweb.SocialWebApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-04-20T19:51:41.483+03:00  INFO 1516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-04-20T19:51:41.623+03:00  INFO 1516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 7 JPA repository interfaces.
+2024-04-20T19:51:42.809+03:00  INFO 1516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-04-20T19:51:42.820+03:00  INFO 1516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-20T19:51:42.820+03:00  INFO 1516 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-04-20T19:51:42.953+03:00  INFO 1516 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-20T19:51:42.954+03:00  INFO 1516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2617 ms
+2024-04-20T19:51:43.301+03:00  INFO 1516 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-04-20T19:51:43.370+03:00  INFO 1516 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-04-20T19:51:43.373+03:00  INFO 1516 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-04-20T19:51:43.768+03:00  INFO 1516 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-04-20T19:51:43.802+03:00  INFO 1516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-20T19:51:44.039+03:00  INFO 1516 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@c11332b
+2024-04-20T19:51:44.041+03:00  INFO 1516 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-20T19:51:44.085+03:00  WARN 1516 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-04-20T19:51:45.970+03:00  INFO 1516 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-04-20T19:51:46.216+03:00  INFO 1516 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-04-20T19:51:47.068+03:00 DEBUG 1516 --- [main] c.e.s.c.security.jwt.TokenFilter         : Filter 'tokenFilter' configured for use
+2024-04-20T19:51:48.341+03:00  WARN 1516 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-04-20T19:51:48.918+03:00  INFO 1516 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c4eda3a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@466bf366, org.springframework.security.web.context.SecurityContextHolderFilter@5bd191c2, org.springframework.security.web.header.HeaderWriterFilter@c680819, org.springframework.security.web.authentication.logout.LogoutFilter@2fb40e49, com.example.socialweb.configurations.security.jwt.TokenFilter@21d6dc81, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56afbace, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2ac7c683, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@28be7db5, org.springframework.security.web.session.SessionManagementFilter@21d561c9, org.springframework.security.web.access.ExceptionTranslationFilter@3f0c2eff, org.springframework.security.web.access.intercept.AuthorizationFilter@1509bd56]
+2024-04-20T19:51:49.863+03:00  INFO 1516 --- [main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2024-04-20T19:51:49.959+03:00  INFO 1516 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2024-04-20T19:51:49.959+03:00  INFO 1516 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2024-04-20T19:51:49.961+03:00  INFO 1516 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1713631909956
+2024-04-20T19:51:50.488+03:00  INFO 1516 --- [kafka-admin-client-thread | adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
+2024-04-20T19:51:50.498+03:00  INFO 1516 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-04-20T19:51:50.499+03:00  INFO 1516 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-04-20T19:51:50.499+03:00  INFO 1516 --- [kafka-admin-client-thread | adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-04-20T19:51:50.519+03:00  INFO 1516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-04-20T19:51:50.531+03:00  INFO 1516 --- [main] c.e.socialweb.SocialWebApplication       : Started SocialWebApplication in 11.018 seconds (process running for 12.397)
+2024-04-20T19:52:12.088+03:00  INFO 1516 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-20T19:52:12.089+03:00  INFO 1516 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-20T19:52:12.091+03:00  INFO 1516 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-04-20T19:52:12.708+03:00  INFO 1516 --- [http-nio-8080-exec-2] c.e.s.c.userControllers.AuthController   : Authentication token has been created.
+2024-04-20T19:53:24.666+03:00  INFO 1516 --- [http-nio-8080-exec-5] c.e.s.s.aspects.FriendshipServiceAspect  : Attempt to confirm a friend request from the user...
+2024-04-20T19:53:24.787+03:00  INFO 1516 --- [http-nio-8080-exec-5] c.e.s.c.u.FriendController               : Friendship request from user 1 has been confirmed.
+2024-04-20T19:55:41.224+03:00  INFO 1516 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-04-20T19:55:41.227+03:00  INFO 1516 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-20T19:55:41.234+03:00  INFO 1516 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

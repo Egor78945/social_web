@@ -1,5 +1,6 @@
 package com.example.socialweb.controllers.userControllers;
 
+import com.example.socialweb.configurations.utils.Cache;
 import com.example.socialweb.configurations.utils.ServerUtils;
 import com.example.socialweb.models.entities.Message;
 import com.example.socialweb.models.entities.User;
@@ -25,10 +26,11 @@ import java.util.List;
 public class MessageController {
     private final UserService userService;
     private final MessageService messageService;
+    private final Cache cache;
 
     @PostMapping("/{id}")
-    public ResponseEntity<String> sendMessage(@PathVariable("id") Long id, @RequestBody MessageModel messageModel, HttpServletRequest request) {
-        User from = ServerUtils.getUserFromSession(request);
+    public ResponseEntity<String> sendMessage(@PathVariable("id") Long id, @RequestBody MessageModel messageModel) {
+        User from = cache.getUser();
         User to = userService.getUserById(id);
         try {
             messageService.send(from, to, messageModel);
