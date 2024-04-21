@@ -1,15 +1,10 @@
 package com.example.socialweb.controllers.userControllers;
 
 import com.example.socialweb.configurations.utils.Cache;
-import com.example.socialweb.configurations.utils.ServerUtils;
-import com.example.socialweb.models.entities.Friendship;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.responseModels.ProfileModel;
 import com.example.socialweb.services.userServices.FriendshipService;
 import com.example.socialweb.services.userServices.UserService;
-import com.example.socialweb.services.converters.FriendshipConverter;
-import com.example.socialweb.services.converters.UserConverter;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -27,13 +22,13 @@ public class FriendController {
     private final FriendshipService friendshipService;
     private final Cache cache;
 
+    // Send friend request to any user by id:
     @PostMapping("/request/{id}")
     public ResponseEntity<String> friendRequest(@PathVariable("id") Long id) {
         User sender = cache.getUser();
-        User recipient = userService.getUserById(id);
         try {
-            friendshipService.friendRequest(sender, recipient);
-            log.info("Request to user with id " + recipient.getId() + " has been sent.");
+            friendshipService.friendRequest(sender, id);
+            log.info("Request to user with id " + id + " has been sent.");
             return ResponseEntity.ok("Request has been sent.");
         } catch (RequestRejectedException e) {
             log.info(e.getMessage());
@@ -41,15 +36,17 @@ public class FriendController {
         }
     }
 
+    // Show all friend requests, sent to me:
     @GetMapping("/request")
     public ResponseEntity<?> friendRequests() {
-        List<ProfileModel> profileModels = friendshipService.getAllFriendRequests(cache.getUser(), false);
+        List<ProfileModel> profileModels = friendshipService.getAllFriendRequests(cache.getUser().getId(), false);
         if (!profileModels.isEmpty())
             return ResponseEntity.ok(profileModels);
         else
             return ResponseEntity.ok("You have not friend requests.");
     }
 
+    // Confirm friend request, sent to me by id:
     @PostMapping("/request/confirm/{id}")
     public ResponseEntity<String> confirmFriendRequest(@PathVariable("id") Long id) {
         try {
@@ -64,6 +61,7 @@ public class FriendController {
         }
     }
 
+    // Reject friend request, sent to me by id:
     @PostMapping("/request/reject/{id}")
     public ResponseEntity<String> rejectRequest(@PathVariable("id") Long id) {
         try {
@@ -78,6 +76,7 @@ public class FriendController {
         }
     }
 
+    // Remove any user from my friend list by id:
     @PostMapping("/remove/{id}")
     public ResponseEntity<String> removeFriend(@PathVariable("id") Long id) {
         try {
@@ -92,9 +91,10 @@ public class FriendController {
         }
     }
 
+    // Show all my friends:
     @GetMapping
     public ResponseEntity<?> allFriends() {
-        List<ProfileModel> profileModels = friendshipService.getAllFriendRequests(cache.getUser(), true);
+        List<ProfileModel> profileModels = friendshipService.getAllFriendRequests(cache.getUser().getId(), true);
         if (!profileModels.isEmpty()) {
             return ResponseEntity.ok(profileModels);
         } else

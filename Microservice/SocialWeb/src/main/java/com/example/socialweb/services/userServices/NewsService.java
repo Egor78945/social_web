@@ -9,6 +9,7 @@ import com.example.socialweb.repositories.UserRepository;
 import com.example.socialweb.services.converters.NewsConverter;
 import com.example.socialweb.services.validation.NewsValidation;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,22 +18,23 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class NewsService {
     private final NewsRepository newsRepository;
     private final UserRepository userRepository;
 
     @Transactional
-    public void postNews(NewsModel newsModel, User currentUser) {
+    public void postNews(NewsModel newsModel, Long userId) {
         if (NewsValidation.isValidNews(newsModel)) {
-            User user = userRepository.findUserById(currentUser.getId());
+            User user = userRepository.findUserById(userId);
             News news = NewsConverter.convertNewsModelToNews(newsModel, user);
             newsRepository.save(news);
         } else
             throw new RequestRejectedException("Description or theme is invalid.");
     }
 
-    public List<News> getNewsByPublisher(User user) {
-        return newsRepository.findAllByPublisher(user);
+    public List<News> getNewsByPublisherId(Long userId) {
+        return newsRepository.findAllByPublisherId(userId);
     }
     public List<News> getAllNews(){
         return newsRepository.findAll();
@@ -42,9 +44,11 @@ public class NewsService {
     }
 
     @Transactional
-    public void deleteNews(News news, User currentUser) {
+    public void deleteNews(Long newsId, User currentUser) {
+        News news = getNewsById(newsId);
         if(news.getPublisher().getId().equals(currentUser.getId()) || currentUser.getRole().contains(UserRole.ADMIN)){
             newsRepository.delete(news);
+            log.info("News has been deleted.");
         } else
             throw new RequestRejectedException("You can not delete other user news.");
     }

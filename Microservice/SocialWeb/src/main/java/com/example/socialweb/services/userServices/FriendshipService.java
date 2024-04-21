@@ -24,18 +24,25 @@ public class FriendshipService {
     private final Cache cache;
 
     @Transactional
-    public List<ProfileModel> getAllFriendRequests(User user, boolean status){
+    public List<ProfileModel> getAllFriendRequests(Long userId, boolean status) {
+        User user = userRepository.findUserById(userId);
         List<Friendship> friendships = allByRecipientAndStatus(user, status);
-        return friendships.stream().map(e -> UserConverter.convertUserToProfileModel(e.getSender())).collect(Collectors.toList());
+        return friendships
+                .stream()
+                .map(e -> UserConverter
+                        .convertUserToProfileModel(e.getSender()))
+                .collect(Collectors.toList());
     }
+
     @Transactional
     public boolean containsBySenderAndRecipientAndStatus(User sender, User recipient, Boolean status) {
         return friendshipRepository.existsBySenderAndRecipientAndStatus(sender, recipient, status);
     }
 
     @Transactional
-    public void friendRequest(User sender, User recipient) {
+    public void friendRequest(User sender, Long recId) {
         sender = userRepository.findUserById(sender.getId());
+        User recipient = userRepository.findUserById(recId);
         if (containsBySenderAndRecipientAndStatus(sender, recipient, false) || containsBySenderAndRecipientAndStatus(recipient, sender, false))
             throw new RequestRejectedException("You or the user already sent the request.");
         else if (containsBySenderAndRecipientAndStatus(sender, recipient, true) || containsBySenderAndRecipientAndStatus(recipient, sender, true))

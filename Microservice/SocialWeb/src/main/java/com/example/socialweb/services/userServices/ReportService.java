@@ -20,10 +20,11 @@ public class ReportService {
     private final UserRepository userRepository;
 
     @Transactional
-    public void reportUser(User applicant, User appealed, ReportModel reportModel) {
-        if(ReportValidation.isValidReport(reportModel) && !applicant.getId().equals(appealed.getId())){
-            User user = userRepository.findUserById(applicant.getId());
-            Report report = new Report.Builder(user, appealed)
+    public void reportUser(Long applicantId, Long appealedId, ReportModel reportModel) {
+        if (ReportValidation.isValidReport(reportModel) && !applicantId.equals(appealedId)) {
+            User applicant = userRepository.findUserById(applicantId);
+            User appealed = userRepository.findUserById(appealedId);
+            Report report = new Report.Builder(applicant, appealed)
                     .setReason(reportModel.getReason())
                     .build();
             reportRepository.save(report);
