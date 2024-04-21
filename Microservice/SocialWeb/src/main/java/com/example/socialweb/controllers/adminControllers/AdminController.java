@@ -20,6 +20,7 @@ public class AdminController {
     private final AdminService adminService;
     private final Cache cache;
 
+    // Ban user by ban model, where you can select user id to ban:
     @PostMapping("/ban")
     public ResponseEntity<String> banUser(@RequestBody BanModel banModel) {
         try {
@@ -33,6 +34,7 @@ public class AdminController {
         }
     }
 
+    // Unban user by id:
     @PostMapping("/unban/{id}")
     public ResponseEntity<String> unbanUser(@PathVariable("id") Long id) {
         try {
