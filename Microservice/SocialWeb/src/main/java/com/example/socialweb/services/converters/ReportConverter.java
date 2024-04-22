@@ -5,6 +5,7 @@ import com.example.socialweb.models.requestModels.ReportModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ReportConverter {
     public static ReportModel convertReportToReportModel(Report report) {
@@ -12,10 +13,9 @@ public class ReportConverter {
     }
 
     public static List<ReportModel> convertReportToReportModel(List<Report> reports) {
-        List<ReportModel> reportModels = new ArrayList<>();
-        for (Report r : reports) {
-            reportModels.add(convertReportToReportModel(r));
-        }
-        return reportModels;
+        return reports
+                .stream()
+                .map(ReportConverter::convertReportToReportModel)
+                .collect(Collectors.toList());
     }
 }

@@ -7,6 +7,7 @@ import com.example.socialweb.models.requestModels.TechSupportRequest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MessageConverter {
     public static User convertMessageToSender(Message message) {
@@ -14,26 +15,25 @@ public class MessageConverter {
     }
 
     public static List<User> convertMessageToSender(List<Message> list) {
-        List<User> senders = new ArrayList<>();
-        for (Message m : list) {
-            if (!senders.contains(convertMessageToSender(m)))
-                senders.add(convertMessageToSender(m));
-        }
-        return senders;
+        return list
+                .stream()
+                .map(MessageConverter::convertMessageToSender)
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     public static MessageModel convertMessageToMessageModel(Message message) {
         return new MessageModel(message);
     }
 
-    public static List<MessageModel> convertMessageToMessageModel(List<Message> message) {
-        List<MessageModel> messageModels = new ArrayList<>();
-        for (Message m : message) {
-            messageModels.add(convertMessageToMessageModel(m));
-        }
-        return messageModels;
+    public static List<MessageModel> convertMessageToMessageModel(List<Message> messages) {
+        return messages
+                .stream()
+                .map(MessageConverter::convertMessageToMessageModel)
+                .collect(Collectors.toList());
     }
-    public static TechSupportRequest convertMessageToTechSupportRequest(User user, MessageModel messageModel){
+
+    public static TechSupportRequest convertMessageToTechSupportRequest(User user, MessageModel messageModel) {
         return new TechSupportRequest(user, messageModel);
     }
 }

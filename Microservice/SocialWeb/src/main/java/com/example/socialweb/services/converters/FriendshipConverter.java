@@ -5,24 +5,24 @@ import com.example.socialweb.models.entities.User;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FriendshipConverter {
-    public static List<User> sendersToUsers(List<Friendship> list){
-        List<User> result = new ArrayList<>();
-        for(Friendship f: list){
-            result.add(f.getSender());
-        }
-        return result;
+    public static List<User> sendersToUsers(List<Friendship> list) {
+        return list
+                .stream()
+                .map(Friendship::getSender)
+                .collect(Collectors.toList());
     }
 
     public static List<User> friendshipToUserByUser(List<Friendship> friendships, User user) {
-        List<User> list = new ArrayList<>();
-        for(Friendship f: friendships){
-            if(f.getSender().getId().equals(user.getId()))
-                list.add(f.getRecipient());
-             else
-                 list.add(f.getSender());
-        }
-        return list;
+        return friendships.stream().map(e -> {
+                    if (e.getSender().getId().equals(user.getId())) {
+                        return e.getRecipient();
+                    } else {
+                        return e.getSender();
+                    }
+                })
+                .collect(Collectors.toList());
     }
 }

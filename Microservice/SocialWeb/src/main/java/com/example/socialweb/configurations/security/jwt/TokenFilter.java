@@ -1,8 +1,5 @@
 package com.example.socialweb.configurations.security.jwt;
 
-import com.example.socialweb.configurations.utils.Cache;
-import com.example.socialweb.models.entities.User;
-import com.example.socialweb.services.userServices.UserService;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -24,8 +21,6 @@ import java.util.stream.Collectors;
 @Slf4j
 public class TokenFilter extends OncePerRequestFilter {
     private final JWTCore jwtCore;
-    private final UserService userService;
-    private final Cache cache;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {

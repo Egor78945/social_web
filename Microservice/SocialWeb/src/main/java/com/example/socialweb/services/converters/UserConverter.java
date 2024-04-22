@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class UserConverter {
@@ -20,7 +21,6 @@ public class UserConverter {
             return UserSex.WOMAN;
         else
             throw new WrongUserDataException("This sex type is unknown.");
-
     }
 
     public static String convertSexToString(UserSex sex) {
@@ -35,11 +35,10 @@ public class UserConverter {
     }
 
     public static List<ProfileModel> convertUserToProfileModel(List<User> list) {
-        List<ProfileModel> resultList = new ArrayList<>();
-        for (User u : list) {
-            resultList.add(convertUserToProfileModel(u));
-        }
-        return resultList;
+        return list
+                .stream()
+                .map(UserConverter::convertUserToProfileModel)
+                .collect(Collectors.toList());
     }
 
     public static ProfileCloseType convertStringToProfileCloseType(String type) {

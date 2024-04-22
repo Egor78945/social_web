@@ -64,13 +64,17 @@ public class FriendshipService {
     public void confirmRequest(User sender, User recipient) {
         if (friendshipRepository.existsBySenderAndRecipientAndStatus(sender, recipient, false)) {
             recipient = userRepository.findUserById(recipient.getId());
+
             Friendship friendship = friendshipRepository.findBySenderAndRecipientAndStatus(sender, recipient, false);
+
             friendship.setStatus(true);
             sender.setFriendsCount(sender.getFriendsCount() + 1);
             recipient.setFriendsCount(recipient.getFriendsCount() + 1);
+
             friendshipRepository.save(friendship);
             userRepository.save(sender);
             userRepository.save(recipient);
+
             cache.loadUser(recipient);
         } else
             throw new RequestRejectedException("You have not received a request from this user.");

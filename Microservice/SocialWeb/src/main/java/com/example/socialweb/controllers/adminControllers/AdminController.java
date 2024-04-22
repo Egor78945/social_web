@@ -1,11 +1,9 @@
 package com.example.socialweb.controllers.adminControllers;
 
 import com.example.socialweb.configurations.utils.Cache;
-import com.example.socialweb.configurations.utils.ServerUtils;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.BanModel;
 import com.example.socialweb.services.adminServices.AdminService;
-import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

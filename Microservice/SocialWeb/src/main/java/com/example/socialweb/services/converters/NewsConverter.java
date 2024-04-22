@@ -7,6 +7,7 @@ import com.example.socialweb.models.requestModels.NewsModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class NewsConverter {
     public static String convertNewsThemeToString(NewsTheme theme) {
@@ -36,11 +37,11 @@ public class NewsConverter {
                 .setTheme(convertStringToNewsTheme(newsModel.getTheme()))
                 .build();
     }
-    public static List<NewsModel> convertNewsToNewsModel(List<News> list){
-        List<NewsModel> newsModels = new ArrayList<>();
-        for(News n: list){
-            newsModels.add(convertNewsToNewsModel(n));
-        }
-        return newsModels;
+
+    public static List<NewsModel> convertNewsToNewsModel(List<News> list) {
+        return list
+                .stream()
+                .map(NewsConverter::convertNewsToNewsModel)
+                .collect(Collectors.toList());
     }
 }
