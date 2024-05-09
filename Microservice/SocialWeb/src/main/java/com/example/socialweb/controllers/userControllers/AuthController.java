@@ -1,13 +1,14 @@
 package com.example.socialweb.controllers.userControllers;
 
 import com.example.socialweb.configurations.security.jwt.JWTCore;
-import com.example.socialweb.configurations.utils.Cache;
-import com.example.socialweb.exceptions.WrongUserDataException;
+import com.example.socialweb.exceptions.WrongDataException;
 import com.example.socialweb.models.requestModels.LoginModel;
 import com.example.socialweb.models.requestModels.RegisterModel;
+import com.example.socialweb.services.converters.UserConverter;
 import com.example.socialweb.services.userServices.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -26,7 +27,7 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final JWTCore jwtCore;
     private final PasswordEncoder passwordEncoder;
-    private final Cache cache;
+    private final RedisTemplate<String, Object> redisTemplate;
 
     @GetMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginModel loginModel) {
@@ -37,7 +38,7 @@ public class AuthController {
             log.info(e.getMessage());
             throw new BadCredentialsException("Unauthorized");
         }
-        cache.loadUser(userService.getUserByEmail(loginModel.getEmail()));
+        redisTemplate.opsForValue().set("current", UserConverter.serializeUserToJsonString(userService.getUserByEmail(loginModel.getEmail())));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtCore.generateToken(authentication);
         log.info("Authentication token has been created.");
@@ -48,7 +49,7 @@ public class AuthController {
     public ResponseEntity<?> registration(@RequestBody RegisterModel registerModel) throws BadCredentialsException {
         try {
             userService.registration(registerModel, passwordEncoder);
-        } catch (WrongUserDataException e) {
+        } catch (WrongDataException e) {
             log.info(e.getMessage());
             return ResponseEntity.ok(e.getMessage());
         }

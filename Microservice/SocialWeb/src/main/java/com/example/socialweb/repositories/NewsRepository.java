@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface NewsRepository extends JpaRepository<News, Long> {
-    @Query("FROM News where News.publisher.id=:id")
+    @Query("SELECT n FROM News n where n.publisher.id=?1")
     List<News> findAllByPublisherId(Long id);
     News findNewsById(Long id);
 }

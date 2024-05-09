@@ -1,6 +1,7 @@
 package com.example.socialweb.services.userServices;
 
 import com.example.socialweb.enums.UserRole;
+import com.example.socialweb.exceptions.WrongDataException;
 import com.example.socialweb.models.entities.News;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.NewsModel;
@@ -10,6 +11,7 @@ import com.example.socialweb.services.converters.NewsConverter;
 import com.example.socialweb.services.validation.NewsValidation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,8 @@ import java.util.List;
 public class NewsService {
     private final NewsRepository newsRepository;
     private final UserRepository userRepository;
+    private final RedisTemplate<String, Object> redisTemplate;
+    private final String HASH_KEY = "news";
 
     @Transactional
     public void postNews(NewsModel newsModel, Long userId) {
@@ -36,17 +40,38 @@ public class NewsService {
     public List<News> getNewsByPublisherId(Long userId) {
         return newsRepository.findAllByPublisherId(userId);
     }
-    public List<News> getAllNews(){
-        return newsRepository.findAll();
+
+    public List<News> getAllNews() throws WrongDataException {
+        List<Object> newsHashes = redisTemplate.opsForHash().values(HASH_KEY);
+        if (newsHashes.isEmpty()) {
+            List<News> newsList = newsRepository.findAll();
+            if (!newsList.isEmpty()) {
+                newsList.forEach(n -> redisTemplate.opsForHash().put(HASH_KEY, n.getId(), NewsConverter.convertNewsToJsonString(n)));
+                return newsList;
+            }
+            throw new WrongDataException("No one news is found.");
+        }
+        return newsHashes.stream().map(h -> NewsConverter.convertJsonToNews((String) h)).toList();
     }
-    public News getNewsById(Long id){
-        return newsRepository.findNewsById(id);
+
+    public News getNewsById(Long id) throws WrongDataException {
+        String newsHash = (String) redisTemplate.opsForHash().get(HASH_KEY, id.toString());
+        if (newsHash == null) {
+            News news = newsRepository.findNewsById(id);
+            if (news != null) {
+                redisTemplate.opsForHash().put(HASH_KEY, news.getId().toString(), NewsConverter.convertNewsToJsonString(news));
+                return news;
+            }
+            throw new WrongDataException(String.format("News with id %s is not found."));
+        }
+        return NewsConverter.convertJsonToNews(newsHash);
     }
 
     @Transactional
-    public void deleteNews(Long newsId, User currentUser) {
+    public void deleteNews(Long newsId, Long currentUserId) throws WrongDataException {
         News news = getNewsById(newsId);
-        if(news.getPublisher().getId().equals(currentUser.getId()) || currentUser.getRole().contains(UserRole.ADMIN)){
+        User currentUser = userRepository.findUserById(currentUserId);
+        if (news.getPublisher().getId().equals(currentUser.getId()) || currentUser.getRole().contains(UserRole.ADMIN)) {
             newsRepository.delete(news);
             log.info("News has been deleted.");
         } else

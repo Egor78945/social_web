@@ -26,8 +26,7 @@ public class FriendshipService {
     @Transactional
     public List<ProfileModel> getAllFriendRequests(Long userId, boolean status) {
         User user = userRepository.findUserById(userId);
-        List<Friendship> friendships = allByRecipientAndStatus(user, status);
-        return friendships
+        return allByRecipientAndStatus(user, status)
                 .stream()
                 .map(e -> UserConverter
                         .convertUserToProfileModel(e.getSender()))
@@ -40,9 +39,9 @@ public class FriendshipService {
     }
 
     @Transactional
-    public void friendRequest(User sender, Long recId) {
-        sender = userRepository.findUserById(sender.getId());
-        User recipient = userRepository.findUserById(recId);
+    public void friendRequest(Long senderId, Long recipientId) {
+        User sender = userRepository.findUserById(senderId);
+        User recipient = userRepository.findUserById(recipientId);
         if (containsBySenderAndRecipientAndStatus(sender, recipient, false) || containsBySenderAndRecipientAndStatus(recipient, sender, false))
             throw new RequestRejectedException("You or the user already sent the request.");
         else if (containsBySenderAndRecipientAndStatus(sender, recipient, true) || containsBySenderAndRecipientAndStatus(recipient, sender, true))
@@ -61,7 +60,9 @@ public class FriendshipService {
     }
 
     @Transactional
-    public void confirmRequest(User sender, User recipient) {
+    public void confirmRequest(Long senderId, Long recipientId) throws Exception {
+        User sender = userRepository.findUserById(senderId);
+        User recipient = userRepository.findUserById(recipientId);
         if (friendshipRepository.existsBySenderAndRecipientAndStatus(sender, recipient, false)) {
             recipient = userRepository.findUserById(recipient.getId());
 
@@ -77,11 +78,13 @@ public class FriendshipService {
 
             cache.loadUser(recipient);
         } else
-            throw new RequestRejectedException("You have not received a request from this user.");
+            throw new Exception("You have not received a request from this user.");
     }
 
     @Transactional
-    public void rejectRequest(User sender, User recipient) {
+    public void rejectRequest(Long id, Long recipientId) {
+        User sender = userRepository.findUserById(id);
+        User recipient = userRepository.findUserById(recipientId);
         if (friendshipRepository.existsBySenderAndRecipientAndStatus(sender, recipient, false)) {
             recipient = userRepository.findUserById(recipient.getId());
             Friendship friendship = friendshipRepository.findBySenderAndRecipientAndStatus(sender, recipient, false);
@@ -91,9 +94,10 @@ public class FriendshipService {
     }
 
     @Transactional
-    public void removeFriend(User sender, User recipient) {
+    public void removeFriend(Long senderId, Long recipientId) {
         Friendship friendship;
-        sender = userRepository.findUserById(sender.getId());
+        User sender = userRepository.findUserById(senderId);
+        User recipient = userRepository.findUserById(recipientId);
         if (friendshipRepository.existsBySenderAndRecipientAndStatus(sender, recipient, true)) {
             friendship = friendshipRepository.findBySenderAndRecipientAndStatus(sender, recipient, true);
             sender.setFriendsCount(sender.getFriendsCount() - 1);

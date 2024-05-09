@@ -1,6 +1,7 @@
 package com.example.socialweb.services.userServices;
 
 import com.example.socialweb.enums.ProfileCloseType;
+import com.example.socialweb.exceptions.WrongDataException;
 import com.example.socialweb.models.entities.Message;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.MessageModel;
@@ -11,6 +12,7 @@ import com.example.socialweb.services.converters.MessageConverter;
 import com.example.socialweb.services.converters.UserConverter;
 import com.example.socialweb.services.validation.MessageValidation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,9 +25,12 @@ import java.util.stream.Collectors;
 public class MessageService {
     private final MessageRepository messageRepository;
     private final UserRepository userRepository;
+    private final UserService userService;
+    private final RedisTemplate<String, Object> redisTemplate;
+    private final String HASH_KEY = "message";
 
     @Transactional
-    public List<ProfileModel> getAllSendersMessage(Long recipientId) {
+    public List<ProfileModel> getAllSendersMessage(Long recipientId) throws WrongDataException {
         return getAllByRecipientId(recipientId)
                 .stream()
                 .map(e -> UserConverter
@@ -35,8 +40,9 @@ public class MessageService {
     }
 
     @Transactional
-    public void send(User from, Long toId, MessageModel messageModel) {
+    public void send(Long fromId, Long toId, MessageModel messageModel) {
         User to = userRepository.findUserById(toId);
+        User from = userRepository.findUserById(fromId);
         if (from.getId().equals(toId))
             throw new RequestRejectedException("You can not sends messages to yourself.");
         else if (!MessageValidation.checkMessageValid(messageModel.getMessage()))
@@ -52,20 +58,32 @@ public class MessageService {
         }
     }
 
-    public List<Message> getAllByRecipientId(Long recipientId) {
-        return messageRepository.findAllByRecipient(userRepository.findUserById(recipientId));
+    @Transactional
+    public List<Message> getAllByRecipientId(Long recipientId) throws WrongDataException {
+        List<Object> messageHashes = redisTemplate.opsForHash().values(HASH_KEY);
+        if (messageHashes.isEmpty()) {
+            List<Message> messages = messageRepository.findAllByRecipient(userService.getUserById(recipientId));
+            if (!messages.isEmpty()) {
+                messages.forEach(m -> redisTemplate.opsForHash().put(HASH_KEY, m.getId(), MessageConverter.convertMessageToJsonString(m)));
+                return messages;
+            }
+            throw new WrongDataException("You have not any messages.");
+        }
+        return messageHashes.stream().map(h -> MessageConverter.convertJsonToMessage((String) h)).toList();
     }
 
+    @Transactional
     public List<Message> getAllBySenderAndRecipient(User sender, User recipient) {
         return messageRepository.findAllBySenderAndRecipient(sender, recipient);
     }
 
     @Transactional
-    public List<MessageModel> getMessagesFromUser(Long senderId, User recipient) {
+    public List<MessageModel> getMessagesFromUser(Long senderId, Long recipientId) {
         User sender = userRepository.findUserById(senderId);
+        User recipient = userRepository.findUserById(recipientId);
         List<MessageModel> messages = getAllBySenderAndRecipient(sender, recipient)
                 .stream()
-                .map(e -> MessageConverter.convertMessageToMessageModel(e))
+                .map(MessageConverter::convertMessageToMessageModel)
                 .collect(Collectors.toList());
         if (!messages.isEmpty())
             return messages;

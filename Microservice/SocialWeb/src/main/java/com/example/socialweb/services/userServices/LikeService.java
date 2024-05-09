@@ -20,8 +20,8 @@ public class LikeService {
     private final NewsRepository newsRepository;
 
     @Transactional
-    public boolean like(Long newsId, User liker) {
-        liker = userRepository.findUserById(liker.getId());
+    public boolean like(Long newsId, Long likerId) {
+        User liker = userRepository.findUserById(likerId);
         News news = newsRepository.findNewsById(newsId);
         if (containsLikeByNewsAndLiker(news, liker)) {
             Like like = likeRepository.findLikeByNewsAndLiker(news, liker);
@@ -31,8 +31,7 @@ public class LikeService {
             log.info(String.format("News %s has been unliked.", news.getId()));
             return false;
         } else {
-            User user = userRepository.findUserById(liker.getId());
-            Like like = new Like(user, news);
+            Like like = new Like(liker, news);
             news.setLikeCount(news.getLikeCount() + 1L);
             likeRepository.save(like);
             newsRepository.save(news);
