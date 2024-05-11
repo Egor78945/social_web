@@ -1,5 +1,6 @@
 package com.example.socialweb.controllers.userControllers;
 
+import com.example.socialweb.annotations.customExceptionHandlers.UserControllersExceptionHandler;
 import com.example.socialweb.exceptions.WrongDataException;
 import com.example.socialweb.models.requestModels.ReportModel;
 import com.example.socialweb.services.userServices.ReportService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/report")
 @RequiredArgsConstructor
+@UserControllersExceptionHandler
 @Slf4j
 public class ReportController {
     private final ReportService reportService;
@@ -19,14 +21,8 @@ public class ReportController {
 
     // Send report to user by report model where you can select user id to report:
     @PostMapping
-    public ResponseEntity<String> reportUser(@RequestBody ReportModel reportModel) {
-        try {
-            Long applicantId = userService.getCurrentUser().getId();
-            reportService.reportUser(applicantId, reportModel.getUserId(), reportModel);
-            log.info("User with id " + applicantId + " reported user with id " + reportModel.getUserId() + ".");
+    public ResponseEntity<String> reportUser(@RequestBody ReportModel reportModel) throws WrongDataException {
+            reportService.reportUser(userService.getCurrentUser().getId(), reportModel.getUserId(), reportModel);
             return ResponseEntity.ok("You reported this user.");
-        } catch (WrongDataException e) {
-            return ResponseEntity.ok(e.getMessage());
-        }
     }
 }

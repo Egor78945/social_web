@@ -1,7 +1,10 @@
 package com.example.socialweb.controllers.userControllers;
 
+import com.example.socialweb.annotations.customExceptionHandlers.UserControllersExceptionHandler;
 import com.example.socialweb.configurations.utils.Cache;
+import com.example.socialweb.exceptions.RequestCancelledException;
 import com.example.socialweb.exceptions.WrongDataException;
+import com.example.socialweb.exceptions.WrongFormatException;
 import com.example.socialweb.models.entities.News;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.NewsModel;
@@ -20,6 +23,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/news")
 @RequiredArgsConstructor
+@UserControllersExceptionHandler
 @Slf4j
 public class NewsController {
     private final NewsService newsService;
@@ -28,67 +32,45 @@ public class NewsController {
 
     // Post any news:
     @PostMapping("/post")
-    public ResponseEntity<String> postNews(@RequestBody NewsModel newsModel) {
-        try {
-            newsService.postNews(newsModel, userService.getCurrentUser().getId());
-        } catch (RequestRejectedException e) {
-            log.info(e.getMessage());
-            return ResponseEntity.ok(e.getMessage());
-        }
+    public ResponseEntity<String> postNews(@RequestBody NewsModel newsModel) throws WrongFormatException {
+        newsService.postNews(newsModel, userService.getCurrentUser().getId());
         return ResponseEntity.ok("News has been post.");
     }
 
     // Get all my news
     @GetMapping("/my")
-    public ResponseEntity<?> getMyNews() {
+    public ResponseEntity<?> getMyNews() throws RequestCancelledException {
         List<News> myNews = newsService.getNewsByPublisherId(userService.getCurrentUser().getId());
-        if (myNews.isEmpty())
-            return ResponseEntity.ok("You have not news.");
         return ResponseEntity.ok(NewsConverter.convertNewsToNewsModel(myNews));
     }
 
     // Get all news
     @GetMapping
-    public ResponseEntity<?> getAllNews() {
-        List<News> news = null;
-        try {
-            news = newsService.getAllNews();
-        } catch (WrongDataException e) {
-            throw new RuntimeException(e);
-        }
-        if (news.isEmpty())
-            return ResponseEntity.ok("There is no any news.");
+    public ResponseEntity<?> getAllNews() throws WrongDataException {
+        List<News> news = newsService.getAllNews();
         return ResponseEntity.ok(NewsConverter.convertNewsToNewsModel(news));
     }
 
     // Get all news, posted by individual user by id:
     @GetMapping("/{id}")
-    public ResponseEntity<?> getAllNewsByUserId(@PathVariable("id") Long id) {
+    public ResponseEntity<?> getAllNewsByUserId(@PathVariable("id") Long id) throws RequestCancelledException {
         List<News> news = newsService.getNewsByPublisherId(id);
-        if (news.isEmpty())
-            return ResponseEntity.ok("This user has not any news.");
         return ResponseEntity.ok(NewsConverter.convertNewsToNewsModel(news));
     }
 
     // Delete news by id:
     @PostMapping("/delete/{id}")
-    public ResponseEntity<String> deleteNews(@PathVariable("id") Long newsId) {
-        try {
-            newsService.deleteNews(newsId, userService.getCurrentUser().getId());
-            return ResponseEntity.ok("The news has been deleted.");
-        } catch (WrongDataException e) {
-            throw new RuntimeException(e);
-        }
+    public ResponseEntity<String> deleteNews(@PathVariable("id") Long newsId) throws RequestCancelledException {
+        newsService.deleteNews(newsId, userService.getCurrentUser().getId());
+        return ResponseEntity.ok("The news has been deleted.");
     }
 
     // Like or unlike news by id:
     @PostMapping("/like/{id}")
-    public ResponseEntity<String> likeNews(@PathVariable("id") Long newsId) {
+    public ResponseEntity<String> likeNews(@PathVariable("id") Long newsId) throws RequestCancelledException {
         if (likeService.like(newsId, userService.getCurrentUser().getId())) {
-            log.info("You liked this news.");
             return ResponseEntity.ok("You liked this news.");
         } else {
-            log.info("Your removed like from this news.");
             return ResponseEntity.ok("You unliked this news.");
         }
     }

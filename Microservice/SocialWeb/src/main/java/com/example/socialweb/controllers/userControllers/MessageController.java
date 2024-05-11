@@ -1,7 +1,10 @@
 package com.example.socialweb.controllers.userControllers;
 
+import com.example.socialweb.annotations.customExceptionHandlers.UserControllersExceptionHandler;
 import com.example.socialweb.configurations.utils.Cache;
+import com.example.socialweb.exceptions.RequestCancelledException;
 import com.example.socialweb.exceptions.WrongDataException;
+import com.example.socialweb.exceptions.WrongFormatException;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.MessageModel;
 import com.example.socialweb.models.responseModels.ProfileModel;
@@ -18,6 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/message")
 @RequiredArgsConstructor
+@UserControllersExceptionHandler
 @Slf4j
 public class MessageController {
     private final MessageService messageService;
@@ -25,40 +29,22 @@ public class MessageController {
 
     // Send message to any user by id:
     @PostMapping("/{id}")
-    public ResponseEntity<String> sendMessage(@PathVariable("id") Long toId, @RequestBody MessageModel messageModel) {
-        try {
-            messageService.send(userService.getCurrentUser().getId(), toId, messageModel);
-            log.info("Message has been sent.");
-            return ResponseEntity.ok("Message has been sent.");
-        } catch (RequestRejectedException e) {
-            log.info(e.getMessage());
-            return ResponseEntity.ok(e.getMessage());
-        }
+    public ResponseEntity<String> sendMessage(@PathVariable("id") Long toId, @RequestBody MessageModel messageModel) throws RequestCancelledException, WrongFormatException {
+        messageService.send(userService.getCurrentUser().getId(), toId, messageModel);
+        return ResponseEntity.ok("Message has been sent.");
     }
 
     // Show all users, who wrote any messages to me
     @GetMapping
-    public ResponseEntity<?> mySenders() {
-        List<ProfileModel> messages = null;
-        try {
-            messages = messageService.getAllSendersMessage(userService.getCurrentUser().getId());
-        } catch (WrongDataException e) {
-            return ResponseEntity.ok(e.getMessage());
-        }
-        if (!messages.isEmpty()) {
-            return ResponseEntity.ok(messages);
-        } else
-            return ResponseEntity.ok("You have not messages.");
+    public ResponseEntity<?> mySenders() throws RequestCancelledException {
+        List<ProfileModel> messages = messageService.getAllSendersMessage(userService.getCurrentUser().getId());
+        return ResponseEntity.ok(messages);
     }
 
     // Show all messages from individual user by id:
     @GetMapping("/{id}")
-    public ResponseEntity<?> messagesBySender(@PathVariable("id") Long senderId) {
-        try {
-            List<MessageModel> messages = messageService.getMessagesFromUser(senderId, userService.getCurrentUser().getId());
-            return ResponseEntity.ok(messages);
-        } catch (RequestRejectedException e) {
-            return ResponseEntity.ok(e.getMessage());
-        }
+    public ResponseEntity<?> messagesBySender(@PathVariable("id") Long senderId) throws RequestCancelledException {
+        List<MessageModel> messages = messageService.getMessagesFromUser(senderId, userService.getCurrentUser().getId());
+        return ResponseEntity.ok(messages);
     }
 }

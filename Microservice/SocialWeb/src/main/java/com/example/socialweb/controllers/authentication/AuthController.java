@@ -1,4 +1,4 @@
-package com.example.socialweb.controllers.userControllers;
+package com.example.socialweb.controllers.authentication;
 
 import com.example.socialweb.configurations.security.jwt.JWTCore;
 import com.example.socialweb.exceptions.WrongDataException;

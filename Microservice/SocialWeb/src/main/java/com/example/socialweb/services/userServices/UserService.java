@@ -3,6 +3,7 @@ package com.example.socialweb.services.userServices;
 import com.example.socialweb.enums.ProfileCloseType;
 import com.example.socialweb.enums.UserRole;
 import com.example.socialweb.enums.UserSex;
+import com.example.socialweb.exceptions.RequestCancelledException;
 import com.example.socialweb.exceptions.WrongDataException;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.RegisterModel;
@@ -66,7 +67,7 @@ public class UserService implements UserDetailsService {
     }
 
     @Transactional
-    public List<User> getAllUsers() throws Exception {
+    public List<User> getAllUsers() throws RequestCancelledException {
         List<Object> usersHash = redisTemplate.opsForHash().values(HASH_KEY);
         if (usersHash.isEmpty()) {
             List<User> users = userRepository.findAll();
@@ -74,13 +75,13 @@ public class UserService implements UserDetailsService {
                 users.forEach(u -> redisTemplate.opsForHash().put(HASH_KEY, u.getId().toString(), UserConverter.serializeUserToJsonString(u)));
                 return users;
             }
-            throw new Exception("No one user is found.");
+            throw new RequestCancelledException("No one user is found.");
         }
         return usersHash.stream().map(h -> UserConverter.serializeJsonStringToUser((String) h)).toList();
     }
 
     @Transactional
-    public User getUserById(Long id) throws WrongDataException {
+    public User getUserById(Long id) throws RequestCancelledException {
         String userHash = (String) redisTemplate.opsForHash().get(HASH_KEY, id.toString());
         if (userHash == null) {
             User user = userRepository.findUserById(id);
@@ -88,7 +89,7 @@ public class UserService implements UserDetailsService {
                 redisTemplate.opsForHash().put(HASH_KEY, id.toString(), UserConverter.serializeUserToJsonString(user));
                 return user;
             }
-            throw new WrongDataException(String.format("User with id %s not found.", id));
+            throw new RequestCancelledException(String.format("User with id %s not found.", id));
         }
         return UserConverter.serializeJsonStringToUser(userHash);
     }

@@ -1,5 +1,7 @@
 package com.example.socialweb.controllers.userControllers;
 
+import com.example.socialweb.annotations.customExceptionHandlers.UserControllersExceptionHandler;
+import com.example.socialweb.exceptions.RequestCancelledException;
 import com.example.socialweb.exceptions.WrongDataException;
 import com.example.socialweb.models.responseModels.ProfileModel;
 import com.example.socialweb.services.userServices.FriendshipService;
@@ -15,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/friend")
 @RequiredArgsConstructor
+@UserControllersExceptionHandler
 @Slf4j
 public class FriendController {
     private final UserService userService;
@@ -22,15 +25,9 @@ public class FriendController {
 
     // Send friend request to any user by id:
     @PostMapping("/request/{id}")
-    public ResponseEntity<String> friendRequest(@PathVariable("id") Long id) {
-        try {
-            friendshipService.friendRequest(userService.getCurrentUser().getId(), id);
-            log.info("Request to user with id " + id + " has been sent.");
-            return ResponseEntity.ok("Request has been sent.");
-        } catch (RequestRejectedException e) {
-            log.info(e.getMessage());
-            return ResponseEntity.ok(e.getMessage());
-        }
+    public ResponseEntity<String> friendRequest(@PathVariable("id") Long id) throws RequestCancelledException {
+        friendshipService.friendRequest(userService.getCurrentUser().getId(), id);
+        return ResponseEntity.ok("Request has been sent.");
     }
 
     // Show all friend requests, sent to me:
@@ -45,43 +42,23 @@ public class FriendController {
 
     // Confirm friend request, sent to me by id:
     @PostMapping("/request/confirm/{id}")
-    public ResponseEntity<String> confirmFriendRequest(@PathVariable("id") Long id) {
-        try {
-            friendshipService.confirmRequest(userService.getCurrentUser().getId(), id);
-            log.info("Friendship request from user " + id + " has been confirmed.");
-            return ResponseEntity.ok("You confirmed this friend request.");
-        } catch (WrongDataException e) {
-            log.info(e.getMessage());
-            return ResponseEntity.ok(e.getMessage());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public ResponseEntity<String> confirmFriendRequest(@PathVariable("id") Long id) throws RequestCancelledException {
+        friendshipService.confirmRequest(userService.getCurrentUser().getId(), id);
+        return ResponseEntity.ok("You confirmed this friend request.");
     }
 
     // Reject friend request, sent to me by id:
     @PostMapping("/request/reject/{id}")
-    public ResponseEntity<String> rejectRequest(@PathVariable("id") Long id) {
-        try {
+    public ResponseEntity<String> rejectRequest(@PathVariable("id") Long id) throws RequestCancelledException {
             friendshipService.rejectRequest(id, userService.getCurrentUser().getId());
-            log.info("Friendship request from user with id " + id + " has been rejected.");
             return ResponseEntity.ok("You have rejected the request from this user.");
-        } catch (RequestRejectedException e) {
-            log.info(e.getMessage());
-            return ResponseEntity.ok(e.getMessage());
-        }
     }
 
     // Remove any user from my friend list by id:
     @PostMapping("/remove/{id}")
-    public ResponseEntity<String> removeFriend(@PathVariable("id") Long id) {
-        try {
+    public ResponseEntity<String> removeFriend(@PathVariable("id") Long id) throws RequestCancelledException {
             friendshipService.removeFriend(userService.getCurrentUser().getId(), id);
-            log.info("User with id " + id + " is not longer your friend.");
             return ResponseEntity.ok("The user is not longer your friend.");
-        } catch (RequestRejectedException e) {
-            log.info(e.getMessage());
-            return ResponseEntity.ok(e.getMessage());
-        }
     }
 
     // Show all my friends:

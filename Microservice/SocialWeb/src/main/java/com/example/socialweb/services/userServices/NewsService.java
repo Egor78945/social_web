@@ -1,7 +1,9 @@
 package com.example.socialweb.services.userServices;
 
 import com.example.socialweb.enums.UserRole;
+import com.example.socialweb.exceptions.RequestCancelledException;
 import com.example.socialweb.exceptions.WrongDataException;
+import com.example.socialweb.exceptions.WrongFormatException;
 import com.example.socialweb.models.entities.News;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.NewsModel;
@@ -28,17 +30,24 @@ public class NewsService {
     private final String HASH_KEY = "news";
 
     @Transactional
-    public void postNews(NewsModel newsModel, Long userId) {
+    public void postNews(NewsModel newsModel, Long userId) throws WrongFormatException {
         if (NewsValidation.isValidNews(newsModel)) {
             User user = userRepository.findUserById(userId);
             News news = NewsConverter.convertNewsModelToNews(newsModel, user);
             newsRepository.save(news);
         } else
-            throw new RequestRejectedException("Description or theme is invalid.");
+            throw new WrongFormatException("Description or theme is invalid.");
     }
 
-    public List<News> getNewsByPublisherId(Long userId) {
-        return newsRepository.findAllByPublisherId(userId);
+    public List<News> getNewsByPublisherId(Long userId) throws RequestCancelledException {
+        if (userRepository.existsById(userId)) {
+            List<News> newsList = newsRepository.findAllByPublisherId(userId);
+            if (!newsList.isEmpty()) {
+                return newsList;
+            }
+            throw new RequestCancelledException(String.format("User with id %s has not posted any news.", userId));
+        }
+        throw new RequestCancelledException(String.format("User with id %s, is not found.", userId));
     }
 
     public List<News> getAllNews() throws WrongDataException {
@@ -68,13 +77,14 @@ public class NewsService {
     }
 
     @Transactional
-    public void deleteNews(Long newsId, Long currentUserId) throws WrongDataException {
-        News news = getNewsById(newsId);
+    public void deleteNews(Long newsId, Long currentUserId) throws RequestCancelledException {
+        News news = newsRepository.findNewsById(newsId);
         User currentUser = userRepository.findUserById(currentUserId);
         if (news.getPublisher().getId().equals(currentUser.getId()) || currentUser.getRole().contains(UserRole.ADMIN)) {
             newsRepository.delete(news);
-            log.info("News has been deleted.");
-        } else
-            throw new RequestRejectedException("You can not delete other user news.");
+            log.info(String.format("User with id %s has deleted news with id %s.", currentUserId, newsId));
+        } else {
+            throw new RequestCancelledException("You can not delete other user news.");
+        }
     }
 }

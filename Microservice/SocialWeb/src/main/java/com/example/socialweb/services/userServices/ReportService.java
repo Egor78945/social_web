@@ -8,11 +8,13 @@ import com.example.socialweb.repositories.ReportRepository;
 import com.example.socialweb.repositories.UserRepository;
 import com.example.socialweb.services.validation.ReportValidation;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class ReportService {
     private final ReportRepository reportRepository;
     private final UserRepository userRepository;
@@ -26,6 +28,7 @@ public class ReportService {
                     .setReason(reportModel.getReason())
                     .build();
             reportRepository.save(report);
+            log.info("User with id " + applicantId + " reported user with id " + appealedId + ".");
         } else
             throw new WrongDataException("Invalid report reason or applicant id equals appealed id.");
     }

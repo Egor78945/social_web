@@ -1,5 +1,6 @@
 package com.example.socialweb.services.userServices;
 
+import com.example.socialweb.exceptions.RequestCancelledException;
 import com.example.socialweb.models.entities.Like;
 import com.example.socialweb.models.entities.News;
 import com.example.socialweb.models.entities.User;
@@ -20,22 +21,25 @@ public class LikeService {
     private final NewsRepository newsRepository;
 
     @Transactional
-    public boolean like(Long newsId, Long likerId) {
+    public boolean like(Long newsId, Long likerId) throws RequestCancelledException {
         User liker = userRepository.findUserById(likerId);
         News news = newsRepository.findNewsById(newsId);
+        if(news == null){
+            throw new RequestCancelledException(String.format("News with id %s is not found.", newsId));
+        }
         if (containsLikeByNewsAndLiker(news, liker)) {
             Like like = likeRepository.findLikeByNewsAndLiker(news, liker);
             likeRepository.delete(like);
             news.setLikeCount(news.getLikeCount() - 1L);
             newsRepository.save(news);
-            log.info(String.format("News %s has been unliked.", news.getId()));
+            log.info(String.format("User with id %s unliked news with id %s", likerId, newsId));
             return false;
         } else {
             Like like = new Like(liker, news);
             news.setLikeCount(news.getLikeCount() + 1L);
             likeRepository.save(like);
             newsRepository.save(news);
-            log.info(String.format("News %s has been liked.", news.getId()));
+            log.info(String.format("User with id %s liked news with id %s", likerId, newsId));
             return true;
         }
     }
