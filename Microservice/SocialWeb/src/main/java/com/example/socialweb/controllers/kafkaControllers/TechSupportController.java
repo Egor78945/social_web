@@ -1,5 +1,6 @@
 package com.example.socialweb.controllers.kafkaControllers;
 
+import com.example.socialweb.annotations.customExceptionHandlers.UserControllersExceptionHandler;
 import com.example.socialweb.configurations.utils.Cache;
 import com.example.socialweb.exceptions.WrongFormatException;
 import com.example.socialweb.models.requestModels.MessageModel;
@@ -15,18 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/support")
 @RequiredArgsConstructor
+@UserControllersExceptionHandler
 public class TechSupportController {
     private final TechSupportService techSupportService;
     private final Cache cache;
 
     // Send message to tech support
     @PostMapping("/send")
-    public ResponseEntity<String> sendMessage(@RequestBody MessageModel messageModel) {
-        try {
-            techSupportService.sendMessage(MessageConverter.convertMessageToTechSupportRequest(cache.getUser(), messageModel));
-        } catch (WrongFormatException e) {
-            return ResponseEntity.ok(e.getMessage());
-        }
+    public ResponseEntity<String> sendMessage(@RequestBody MessageModel messageModel) throws WrongFormatException {
+        techSupportService.sendMessage(MessageConverter.convertMessageToTechSupportRequest(cache.getUser(), messageModel));
         return ResponseEntity.ok("Message has been sent.");
     }
 }

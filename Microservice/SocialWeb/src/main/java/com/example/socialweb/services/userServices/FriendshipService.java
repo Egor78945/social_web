@@ -51,7 +51,6 @@ public class FriendshipService {
         else {
             Friendship friendship = new Friendship(sender, recipient);
             friendshipRepository.save(friendship);
-            log.info(String.format("User with id %s sent friend request to user with id %s.", senderId, recipientId));
         }
     }
 
@@ -76,8 +75,6 @@ public class FriendshipService {
             friendshipRepository.save(friendship);
             userRepository.save(sender);
             userRepository.save(recipient);
-
-            log.info(String.format("User with id %s accepted friend request from user with id %s.", recipientId, senderId));
         } else
             throw new RequestCancelledException("You have not received a request from this user.");
     }
@@ -89,7 +86,6 @@ public class FriendshipService {
         if (friendshipRepository.existsBySenderAndRecipientAndStatus(sender, recipient, false)) {
             Friendship friendship = friendshipRepository.findBySenderAndRecipientAndStatus(sender, recipient, false);
             friendshipRepository.delete(friendship);
-            log.info(String.format("User with id %s rejected friend request from user with id %s", recipientId, senderId));
         } else
             throw new RequestCancelledException("You have not received a request from this user.");
     }
@@ -113,7 +109,5 @@ public class FriendshipService {
 
         userRepository.save(sender);
         userRepository.save(recipient);
-
-        log.info(String.format("Users with id %s and %s is not longer friends.", senderId, recipientId));
     }
 }

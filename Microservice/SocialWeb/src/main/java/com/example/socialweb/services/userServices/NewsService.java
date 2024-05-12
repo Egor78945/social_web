@@ -14,7 +14,6 @@ import com.example.socialweb.services.validation.NewsValidation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -71,7 +70,7 @@ public class NewsService {
                 redisTemplate.opsForHash().put(HASH_KEY, news.getId().toString(), NewsConverter.convertNewsToJsonString(news));
                 return news;
             }
-            throw new WrongDataException(String.format("News with id %s is not found."));
+            throw new WrongDataException(String.format("News with id %s is not found.", id));
         }
         return NewsConverter.convertJsonToNews(newsHash);
     }
@@ -82,7 +81,6 @@ public class NewsService {
         User currentUser = userRepository.findUserById(currentUserId);
         if (news.getPublisher().getId().equals(currentUser.getId()) || currentUser.getRole().contains(UserRole.ADMIN)) {
             newsRepository.delete(news);
-            log.info(String.format("User with id %s has deleted news with id %s.", currentUserId, newsId));
         } else {
             throw new RequestCancelledException("You can not delete other user news.");
         }

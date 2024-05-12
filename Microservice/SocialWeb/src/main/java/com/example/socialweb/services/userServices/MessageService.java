@@ -62,7 +62,6 @@ public class MessageService {
                     .setMessage(messageModel.getMessage())
                     .build();
             messageRepository.save(message);
-            log.info("Message has been sent.");
         }
     }
 
@@ -81,21 +80,21 @@ public class MessageService {
     }
 
     @Transactional
-    public List<Message> getAllBySenderAndRecipient(User sender, User recipient) {
+    public List<Message> getAllBySenderAndRecipient(Long senderId, Long recipientId) {
+        User sender = userRepository.findUserById(senderId);
+        User recipient = userRepository.findUserById(recipientId);
         return messageRepository.findAllBySenderAndRecipient(sender, recipient);
     }
 
     @Transactional
     public List<MessageModel> getMessagesFromUser(Long senderId, Long recipientId) throws RequestCancelledException {
-        User sender = userRepository.findUserById(senderId);
-        User recipient = userRepository.findUserById(recipientId);
-        List<MessageModel> messages = getAllBySenderAndRecipient(sender, recipient)
+        List<MessageModel> messages = getAllBySenderAndRecipient(senderId, recipientId)
                 .stream()
                 .map(MessageConverter::convertMessageToMessageModel)
                 .collect(Collectors.toList());
         if (!messages.isEmpty())
             return messages;
-        else if (sender.getId().equals(recipient.getId()))
+        else if (senderId.equals(recipientId))
             throw new RequestCancelledException("You can not get messages from yourself.");
         else
             throw new RequestCancelledException("You have not got messages from this user.");

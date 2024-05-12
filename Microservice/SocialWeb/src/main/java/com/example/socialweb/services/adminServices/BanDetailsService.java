@@ -1,12 +1,10 @@
 package com.example.socialweb.services.adminServices;
 
 import com.example.socialweb.enums.UserRole;
-import com.example.socialweb.enums.UserSex;
 import com.example.socialweb.models.entities.BanDetails;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.repositories.BanDetailsRepository;
 import com.example.socialweb.repositories.UserRepository;
-import com.example.socialweb.services.userServices.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -28,7 +28,6 @@ public class ReportService {
                     .setReason(reportModel.getReason())
                     .build();
             reportRepository.save(report);
-            log.info("User with id " + applicantId + " reported user with id " + appealedId + ".");
         } else
             throw new WrongDataException("Invalid report reason or applicant id equals appealed id.");
     }

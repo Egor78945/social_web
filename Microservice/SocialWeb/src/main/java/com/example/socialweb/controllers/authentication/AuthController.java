@@ -1,5 +1,6 @@
 package com.example.socialweb.controllers.authentication;
 
+import com.example.socialweb.annotations.customExceptionHandlers.UserControllersExceptionHandler;
 import com.example.socialweb.configurations.security.jwt.JWTCore;
 import com.example.socialweb.exceptions.WrongDataException;
 import com.example.socialweb.models.requestModels.LoginModel;
@@ -14,6 +15,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 @Slf4j
+@UserControllersExceptionHandler
 public class AuthController {
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
@@ -30,29 +33,18 @@ public class AuthController {
     private final RedisTemplate<String, Object> redisTemplate;
 
     @GetMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginModel loginModel) {
+    public ResponseEntity<?> login(@RequestBody LoginModel loginModel) throws AuthenticationException {
         Authentication authentication;
-        try {
-            authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginModel.getEmail(), loginModel.getPassword()));
-        } catch (BadCredentialsException e) {
-            log.info(e.getMessage());
-            throw new BadCredentialsException("Unauthorized");
-        }
+        authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginModel.getEmail(), loginModel.getPassword()));
         redisTemplate.opsForValue().set("current", UserConverter.serializeUserToJsonString(userService.getUserByEmail(loginModel.getEmail())));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtCore.generateToken(authentication);
-        log.info("Authentication token has been created.");
         return ResponseEntity.ok(jwt);
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> registration(@RequestBody RegisterModel registerModel) throws BadCredentialsException {
-        try {
-            userService.registration(registerModel, passwordEncoder);
-        } catch (WrongDataException e) {
-            log.info(e.getMessage());
-            return ResponseEntity.ok(e.getMessage());
-        }
+    public ResponseEntity<?> registration(@RequestBody RegisterModel registerModel) throws BadCredentialsException, WrongDataException {
+        userService.registration(registerModel, passwordEncoder);
         return ResponseEntity.ok(registerModel);
     }
 }

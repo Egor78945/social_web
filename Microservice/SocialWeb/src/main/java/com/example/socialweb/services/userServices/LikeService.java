@@ -32,14 +32,12 @@ public class LikeService {
             likeRepository.delete(like);
             news.setLikeCount(news.getLikeCount() - 1L);
             newsRepository.save(news);
-            log.info(String.format("User with id %s unliked news with id %s", likerId, newsId));
             return false;
         } else {
             Like like = new Like(liker, news);
             news.setLikeCount(news.getLikeCount() + 1L);
             likeRepository.save(like);
             newsRepository.save(news);
-            log.info(String.format("User with id %s liked news with id %s", likerId, newsId));
             return true;
         }
     }

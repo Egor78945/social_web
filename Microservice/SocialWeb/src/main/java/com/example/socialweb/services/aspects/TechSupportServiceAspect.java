@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 @Slf4j
-public class LikeServiceAspect {
-    @After("execution(public boolean like(java.lang.Long, java.lang.Long))")
-    public void afterLikeAdvice(JoinPoint joinPoint) {
+public class TechSupportServiceAspect {
+    @After("execution(public void sendMessage(com.example.socialweb.models.requestModels.TechSupportRequest))")
+    public void afterTechSupportMessageAdvice(JoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
-        log.info(String.format("User with id %s liked or unliked news with id %s.", args[1], args[0]));
+        log.info(String.format("Message to tech support has been sent: %s", args[0]));
     }
 }
