@@ -27,7 +27,6 @@ public class AdminController {
     public ResponseEntity<String> banUser(@RequestBody BanModel banModel) throws RequestCancelledException {
         User admin = userService.getCurrentUser();
         adminService.banUser(banModel, admin);
-        log.info("The user is successfully banned.");
         return ResponseEntity.ok("The user is successfully banned.");
     }
 
@@ -35,7 +34,6 @@ public class AdminController {
     @PostMapping("/unban/{id}")
     public ResponseEntity<String> unbanUser(@PathVariable("id") Long id) throws RequestCancelledException {
         adminService.unbanUser(id);
-        log.info("The user successfully unbanned.");
         return ResponseEntity.ok("The user successfully unbanned.");
     }
 }
