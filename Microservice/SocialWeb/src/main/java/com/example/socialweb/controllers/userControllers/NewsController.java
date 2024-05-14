@@ -1,12 +1,10 @@
 package com.example.socialweb.controllers.userControllers;
 
 import com.example.socialweb.annotations.customExceptionHandlers.UserControllersExceptionHandler;
-import com.example.socialweb.configurations.utils.Cache;
 import com.example.socialweb.exceptions.RequestCancelledException;
 import com.example.socialweb.exceptions.WrongDataException;
 import com.example.socialweb.exceptions.WrongFormatException;
 import com.example.socialweb.models.entities.News;
-import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.requestModels.NewsModel;
 import com.example.socialweb.services.userServices.LikeService;
 import com.example.socialweb.services.userServices.NewsService;
@@ -15,7 +13,6 @@ import com.example.socialweb.services.userServices.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

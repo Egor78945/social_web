@@ -1,17 +1,14 @@
 package com.example.socialweb.services.userServices;
 
-import com.example.socialweb.configurations.utils.Cache;
 import com.example.socialweb.exceptions.RequestCancelledException;
 import com.example.socialweb.models.entities.Friendship;
 import com.example.socialweb.models.entities.User;
 import com.example.socialweb.models.responseModels.ProfileModel;
 import com.example.socialweb.repositories.FriendshipRepository;
 import com.example.socialweb.repositories.UserRepository;
-import com.example.socialweb.services.converters.FriendshipConverter;
 import com.example.socialweb.services.converters.UserConverter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

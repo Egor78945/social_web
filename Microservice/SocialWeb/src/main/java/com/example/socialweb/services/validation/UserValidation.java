@@ -47,9 +47,7 @@ public class UserValidation {
                 else
                     return false;
             }
-            if (dig < 4 || let < 4)
-                return false;
-            return true;
+            return dig >= 4 && let >= 4;
         }
         return false;
     }
