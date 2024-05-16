@@ -6,11 +6,15 @@ import com.example.socialweb.enums.UserSex;
 import com.example.socialweb.exceptions.RequestCancelledException;
 import com.example.socialweb.exceptions.WrongDataException;
 import com.example.socialweb.models.entities.User;
+import com.example.socialweb.models.factories.UserFactory;
 import com.example.socialweb.models.requestModels.RegisterModel;
 import com.example.socialweb.repositories.UserRepository;
 import com.example.socialweb.services.converters.UserConverter;
 import com.example.socialweb.services.validation.UserValidation;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,10 +27,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
     private final RedisTemplate<String, Object> redisTemplate;
+    private final UserFactory userFactory;
+
+    @Autowired
+    public UserService(UserRepository userRepository, RedisTemplate<String, Object> redisTemplate, UserFactory userFactory) {
+        this.userRepository = userRepository;
+        this.redisTemplate = redisTemplate;
+        this.userFactory = userFactory;
+    }
+
     private final String HASH_KEY = "user";
 
     @Override
@@ -48,18 +60,7 @@ public class UserService implements UserDetailsService {
     @Transactional
     public void registration(RegisterModel registerModel, PasswordEncoder passwordEncoder) throws WrongDataException {
         if (UserValidation.checkUserData(registerModel) && !containsUserByEmail(registerModel.getEmail())) {
-            UserSex sex = UserConverter.convertStringToSex(registerModel.getSex());
-            ProfileCloseType closeType = UserConverter.convertStringToProfileCloseType(registerModel.getProfileCloseType());
-            List<UserRole> roles = new ArrayList<>();
-            roles.add(UserRole.USER);
-            User user = new User
-                    .Builder(registerModel.getEmail(), passwordEncoder.encode(registerModel.getPassword()))
-                    .setName(registerModel.getName())
-                    .setSurname(registerModel.getSurname())
-                    .setRole(roles)
-                    .setSex(sex)
-                    .setProfileCloseType(closeType)
-                    .build();
+            User user = userFactory.getUserForRegistration(registerModel, passwordEncoder);
             userRepository.save(user);
         } else {
             throw new WrongDataException("User data is invalid or the email is busy.");
@@ -93,7 +94,8 @@ public class UserService implements UserDetailsService {
         }
         return UserConverter.serializeJsonStringToUser(userHash);
     }
-    public User getCurrentUser(){
-        return UserConverter.serializeJsonStringToUser((String)redisTemplate.opsForValue().get("current"));
+
+    public User getCurrentUser() {
+        return UserConverter.serializeJsonStringToUser((String) redisTemplate.opsForValue().get("current"));
     }
 }

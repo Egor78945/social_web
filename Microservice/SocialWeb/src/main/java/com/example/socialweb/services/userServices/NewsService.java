@@ -49,6 +49,7 @@ public class NewsService {
         throw new RequestCancelledException(String.format("User with id %s, is not found.", userId));
     }
 
+    @Transactional
     public List<News> getAllNews() throws WrongDataException {
         List<Object> newsHashes = redisTemplate.opsForHash().values(HASH_KEY);
         if (newsHashes.isEmpty()) {
@@ -62,6 +63,7 @@ public class NewsService {
         return newsHashes.stream().map(h -> NewsConverter.convertJsonToNews((String) h)).toList();
     }
 
+    @Transactional
     public News getNewsById(Long id) throws WrongDataException {
         String newsHash = (String) redisTemplate.opsForHash().get(HASH_KEY, id.toString());
         if (newsHash == null) {

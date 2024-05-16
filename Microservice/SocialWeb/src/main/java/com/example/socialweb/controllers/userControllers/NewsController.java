@@ -34,6 +34,13 @@ public class NewsController {
         return ResponseEntity.ok("News has been post.");
     }
 
+    // Get news by id
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getNewsById(@PathVariable("id") Long id) throws WrongDataException {
+        News news = newsService.getNewsById(id);
+        return ResponseEntity.ok(NewsConverter.convertNewsToNewsModel(news));
+    }
+
     // Get all my news
     @GetMapping("/my")
     public ResponseEntity<?> getMyNews() throws RequestCancelledException {
@@ -49,7 +56,7 @@ public class NewsController {
     }
 
     // Get all news, posted by individual user by id:
-    @GetMapping("/{id}")
+    @GetMapping("/user/{id}")
     public ResponseEntity<?> getAllNewsByUserId(@PathVariable("id") Long id) throws RequestCancelledException {
         List<News> news = newsService.getNewsByPublisherId(id);
         return ResponseEntity.ok(NewsConverter.convertNewsToNewsModel(news));
